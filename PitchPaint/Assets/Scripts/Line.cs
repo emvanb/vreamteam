@@ -52,7 +52,6 @@ public class Line :MonoBehaviour{
 			if (currentTime > myLine [currentPoint].creationTime) {
                 //"Play Point" 
                 // e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
-                Debug.Log("Playing!");
                 myLine[currentPoint].sample.Stop();
                 myLine[currentPoint].sample.Play();
 				if (currentPoint + 1 > myLine.Count - 1) { // check if we have reached last index of line

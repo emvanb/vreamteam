@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18053612, g: 0.22601815, b: 0.3071875, a: 1}
+  m_IndirectSpecularColor: {r: 0.18053588, g: 0.22601774, b: 0.30718702, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -202,6 +202,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1727821098}
   - 114: {fileID: 1727821097}
+  - 114: {fileID: 1727821099}
   m_Layer: 0
   m_Name: TestBrush
   m_TagString: Untagged
@@ -225,7 +226,7 @@ MonoBehaviour:
     type: 2}
   LastMousePos: {x: 0, y: 0, z: 0}
   CurrentMousePos: {x: 0, y: 0, z: 0}
-  TestClip: {fileID: 8300000, guid: c462e6030ed2ff3499c798cbaa391f0a, type: 3}
+  TestClip: {fileID: 8300000, guid: 0447a13bfbb164c92a770264db72dc3c, type: 3}
   DrawingLineParentPrefab: {fileID: 1000010390826042, guid: f0f0ca6894102124f897e9ca87234dde,
     type: 2}
   CurrentDrawingLineParent: {fileID: 0}
@@ -243,6 +244,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1727821099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727821096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b56914c90750154d96937128c3ed25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myBrush: {fileID: 1727821097}
 --- !u!1 &1805669940
 GameObject:
   m_ObjectHideFlags: 0
