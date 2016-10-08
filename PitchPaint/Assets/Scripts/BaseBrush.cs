@@ -15,6 +15,7 @@ public class BaseBrush : MonoBehaviour {
 	public GameObject CurrentDrawingLineParent;
 	public float TimeOfLastPointSpawn;
 
+    private Vector3 lastPoint;
 	// Use this for initialization
 	void Start () {
 		TimeOfLastPointSpawn= 0;
@@ -46,15 +47,21 @@ public class BaseBrush : MonoBehaviour {
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
 		CurrentDrawingLineParent.transform.position = Input.mousePosition;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
-	}
+        lastPoint =  new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
+        lastPoint = Camera.main.ScreenToWorldPoint(lastPoint);
+            
+    }
 	public void UpdateDraw(Vector3 handPos, GameObject currentLine)
 	{
 		currentTime += Time.deltaTime;
 		if (currentTime > timeBetweenPoints) {
 			GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab, currentLine.transform);
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+            CurrentPointPrefab.transform.position = (handPos + lastPoint) /2.0f;
+            CurrentPointPrefab.transform.LookAt(handPos);
+            CurrentPointPrefab.transform.localScale = new Vector3(.5f,.5f,(handPos - lastPoint).magnitude *.8f );
             //LinePoint pt = new LinePoint ();
-			pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
+            pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;
 			pt.pointVelocity = (handPos - lastPos).normalized;
 			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
@@ -63,6 +70,7 @@ public class BaseBrush : MonoBehaviour {
 			pt.sample = pt.GetComponent<AudioSource> ();
 			pt.sample.Play ();
 			currentTime = 0;
+            lastPoint = handPos;
 		}
 		lastPos = handPos;
 	}
