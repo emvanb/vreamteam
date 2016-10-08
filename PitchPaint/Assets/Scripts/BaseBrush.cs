@@ -66,7 +66,7 @@ public class BaseBrush : MonoBehaviour {
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
             CurrentPointPrefab.transform.position = (handPos + lastPoint) /2.0f;
             CurrentPointPrefab.transform.LookAt(handPos);
-            CurrentPointPrefab.transform.localScale = new Vector3(.5f,.5f,(handPos - lastPoint).magnitude *.8f );
+            CurrentPointPrefab.transform.localScale = new Vector3(.05f,.05f,(handPos - lastPoint).magnitude *.8f );
             //LinePoint pt = new LinePoint ();
             pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;

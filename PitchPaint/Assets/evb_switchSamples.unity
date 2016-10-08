@@ -170,6 +170,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!21 &926312879
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: PixelSnap
+      second: 0
+    m_Colors:
+    - first:
+        name: _Color
+      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &928134525
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,35 +282,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!21 &1052071185
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - first:
-        name: PixelSnap
-      second: 0
-    m_Colors:
-    - first:
-        name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1181266902
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,6 +358,23 @@ MonoBehaviour:
     type: 2}
   CurrentDrawingLineParent: {fileID: 0}
   TimeOfLastPointSpawn: 0
+  AudioMixerGroupArray:
+  - {fileID: 243000011530402342, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000012516894672, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000012778245266, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000012849596028, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000011917010972, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000013103080624, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000014047330546, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000011349938824, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000012314456776, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000011037513360, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000013355963526, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000010925434538, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000011044545132, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000012601445590, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  - {fileID: 243000010078158360, guid: e3619c03475217a43a80c129bf273c52, type: 2}
+  HeightofSpawnedY: 0
 --- !u!1 &1316080041
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,7 +649,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!43 &1798053219
+--- !u!1 &1853623445 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+  m_PrefabInternal: {fileID: 1982663683}
+--- !u!114 &1853623446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853623445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7346a42905a29b347b1f492e8ad7b49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerIndex: 0
+  triggerPressed: 0
+  steamPressed: 0
+  menuPressed: 0
+  padPressed: 0
+  padTouched: 0
+  gripped: 0
+--- !u!114 &1853623447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853623445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7a84fb9d76eb14cb573836656c0e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerPress: 0
+  dpadPressUp: 0
+  dpadPressDown: 0
+  dpadPressLeft: 0
+  dpadPressRight: 0
+  trackedObj: {fileID: 1982663686}
+--- !u!43 &1941040516
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -760,45 +816,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &1853623445 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 124034, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
-  m_PrefabInternal: {fileID: 1982663683}
---- !u!114 &1853623446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1853623445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7346a42905a29b347b1f492e8ad7b49f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerIndex: 0
-  triggerPressed: 0
-  steamPressed: 0
-  menuPressed: 0
-  padPressed: 0
-  padTouched: 0
-  gripped: 0
---- !u!114 &1853623447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1853623445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b7a84fb9d76eb14cb573836656c0e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerPress: 0
-  dpadPressUp: 0
-  dpadPressDown: 0
-  dpadPressLeft: 0
-  dpadPressRight: 0
-  trackedObj: {fileID: 1982663686}
 --- !u!1001 &1982663683
 Prefab:
   m_ObjectHideFlags: 0
@@ -841,11 +858,11 @@ Prefab:
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1798053219}
+      objectReference: {fileID: 1941040516}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1052071185}
+      objectReference: {fileID: 926312879}
     - target: {fileID: 147176, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_IsActive
       value: 1
