@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/evb_test.unity
-  isLoaded: 1
-  isActive: 1
