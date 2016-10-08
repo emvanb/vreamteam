@@ -73,8 +73,8 @@ public class BaseBrush : MonoBehaviour {
 			pt.pointVelocity = (handPos - lastPos).normalized;
 
 			//setting up the audiosourcemixer pitch
-			HeightofSpawnedY = (int)Mathf.Round(handPos.y*10); // handPos supposedly ranges from 0 to 1); 
-			Debug.Log("HandPos is= " + handPos + " HeightofSpawnedY= " + HeightofSpawnedY);
+			HeightofSpawnedY = (int)Mathf.Round((handPos.y-0.5f)*10); // handPos supposedly ranges from 0 to 1); 
+			Debug.Log("HandPos is= " + handPos.y + " HeightofSpawnedY= " + HeightofSpawnedY);
 			Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
 
