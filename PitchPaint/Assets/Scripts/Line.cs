@@ -20,46 +20,44 @@ public class Line :MonoBehaviour{
 		}
 	}
 
-	public float StartTime { // start time for when line is begins playiugn,
+	public float startTime { // start time for when line is begins playiugn,
 		get;
 		set;
 	}
 
-	public float EndTime {
+	public float endTime {
 		get;
 		set;
 	}
 
-	public float TimeToRepeat {// float for time to push to repeat
+	public float timeToRepeat {// float for time to push to repeat
 		get;
 		set;
 	}
 
-	public float Volume { // "General volume of line"
+	public float lineVolume { // "General lineVolume of line"
 		get;
 		set;
 	}
 
-
-
-	public float CurrentTime = 0; // current time for looping through thte update function
-	public LinePoint CurrentPoint;  //the current point 
+	public float currentTime = 0; // current time for looping through thte update function
+	public int currentPoint =0;  //current point indexhe current point 
 
 	public LinePoint OriginPoint; // OriginPoint aka first index of line. 
 
-	// Update iterates through each point in the list based on its creation time, and will "play the point" 
+
 	void Update(){ 
 		Debug.Assert (myLine.Count > 0);// Line should not be created without at least 1 point. 
-		CurrentTime+=1;
-		foreach (LinePoint testPoint in myLine){ // if currentime matches a points creation time, add code to eventually play the point
-			if (testPoint.CreationTime == CurrentTime) {
-				// "Play Point"
+		if (currentTime > myLine [currentPoint].creationTime) {
+			//"Play Point" 
+			//myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play?
+			if (currentPoint + 1 > myLine.Count - 1) { // check if we have reached last index of line
+				currentPoint = 0;
+			} else {
+				currentPoint += 1;
+				currentTime += 1;
 			}
-		}
-		if (CurrentTime > (TimeToRepeat + myLine [myLine.Count - 1].CreationTime)) { // if current time is over 
-			CurrentTime = 0;
 		}
 
 	}
-
 }
