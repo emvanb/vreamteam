@@ -16,13 +16,10 @@ public class BaseBrush : MonoBehaviour {
 	public GameObject DrawingLineParentPrefab;
 	public GameObject CurrentDrawingLineParent;
 	public float TimeOfLastPointSpawn;
-<<<<<<< HEAD
 	public AudioMixerGroup[] AudioMixerGroupArray;
 	public int HeightofSpawnedY;
-=======
 
     private Vector3 lastPoint;
->>>>>>> abcd06d20128182d2e4b6d2ce78567594aa087a8
 	// Use this for initialization
 	void Start () {
 		TimeOfLastPointSpawn= 0;
@@ -77,8 +74,8 @@ public class BaseBrush : MonoBehaviour {
 			pt.pointVelocity = (handPos - lastPos).normalized;
 
 			//setting up the audiosourcemixer pitch
-			Debug.Log("HandPos is: " + handPos);
-			HeightofSpawnedY = (int)Mathf.Round(handPos.y*10)/100; // 
+			HeightofSpawnedY = (int)Mathf.Round(handPos.y*10); // handPos supposedly ranges from 0 to 1); 
+			Debug.Log("HandPos is= " + handPos + " HeightofSpawnedY= " + HeightofSpawnedY);
 			Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
 
