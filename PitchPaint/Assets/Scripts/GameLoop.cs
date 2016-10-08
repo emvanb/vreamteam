@@ -42,9 +42,9 @@ public class GameLoop : MonoBehaviour {
 			console.text = "yo yo trigger pressed on right";
 			if (myBrush.CurrentDrawingLineParent == null || 
 				myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn == true) {
-				myBrush.StartDraw ();
+				myBrush.StartDraw (rightC.transform.position);
 			}
-			myBrush.UpdateDraw (Input.mousePosition, myBrush.CurrentDrawingLineParent);
+			myBrush.UpdateDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
 
 		} else if(myBrush.CurrentDrawingLineParent!=null) {
 			myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;

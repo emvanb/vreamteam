@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLoop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Line.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLoop.cs" Line="59" Column="1" />
-      <File FileName="Assets\Scripts\Vream_Controller.cs" Line="57" Column="1" />
+      <File FileName="Assets\Scripts\GameLoop.cs" Line="60" Column="19" />
+      <File FileName="Assets\Scripts\Vream_Controller.cs" Line="13" Column="1" />
+      <File FileName="Assets\Scripts\BaseBrush.cs" Line="50" Column="3" />
+      <File FileName="Assets\Scripts\Line.cs" Line="55" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
