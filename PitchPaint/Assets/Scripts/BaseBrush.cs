@@ -21,37 +21,39 @@ public class BaseBrush : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void FixedUpdate () {
-		if (Input.GetMouseButtonDown (0)) {// first frame mouse is pressed, create a new line.
-			CurrentDrawingLineParent = (GameObject) Instantiate (DrawingLineParentPrefab);
-			CurrentDrawingLineParent.transform.position = Input.mousePosition;
-		}
-		else if (Input.GetMouseButton (0)==true) { // while the mouse is pressed. 
-			{
-				Debug.Log (Time.time - TimeOfLastPointSpawn);
-
-				if (true) {
-					UpdateDraw (Input.mousePosition, CurrentDrawingLineParent);
-					//TimeOfLastPointSpawn = Time.time;
-				}
-			}
-		}
-		else if (Input.GetMouseButtonUp (0)) {
-			CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;
-		}
-			
+//	void FixedUpdate () {
+//		if (Input.GetMouseButtonDown (0)) {// first frame mouse is pressed, create a new line.
+//			CurrentDrawingLineParent = (GameObject) Instantiate (DrawingLineParentPrefab);
+//			CurrentDrawingLineParent.transform.position = Input.mousePosition;
+//		}
+//		else if (Input.GetMouseButton (0)==true) { // while the mouse is pressed. 
+//			{
+//				Debug.Log (Time.time - TimeOfLastPointSpawn);
+//
+//				if (true) {
+//					UpdateDraw (Input.mousePosition, CurrentDrawingLineParent);
+//					//TimeOfLastPointSpawn = Time.time;
+//				}
+//			}
+//		}
+//		else if (Input.GetMouseButtonUp (0)) {
+//			CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;
+//		}
+//			
+//	}
+	public void StartDraw()
+	{
+		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
+		CurrentDrawingLineParent.transform.position = Input.mousePosition;
+		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
 	}
-
-
-	void UpdateDraw(Vector3 handPos, GameObject currentLine)
+	public void UpdateDraw(Vector3 handPos, GameObject currentLine)
 	{
 		currentTime += Time.deltaTime;
 		if (currentTime > timeBetweenPoints) {
 			GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab, currentLine.transform);
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
             //LinePoint pt = new LinePoint ();
-            Debug.Log(currentLine.GetComponent<Line>().startTime);
-            Debug.Log(Time.time);
 			pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;
 			pt.pointVelocity = (handPos - lastPos).normalized;
