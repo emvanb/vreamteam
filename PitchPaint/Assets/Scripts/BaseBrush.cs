@@ -6,26 +6,60 @@ public class BaseBrush : MonoBehaviour {
 	float timeBetweenPoints =1;
 	float currentTime = 0;
 	Vector3 lastPos = Vector3.zero;
+	public GameObject PointPrefab;
+	//public Line DrawingLine;
+	public Vector3 LastMousePos;
+	public Vector3 CurrentMousePos;
+	public AudioClip TestClip;
+	public GameObject DrawingLineParentPrefab;
+	public GameObject CurrentDrawingLineParent;
+	public float TimeOfLastPointSpawn;
+
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		TimeOfLastPointSpawn= 0;
 	}
 
-	void UpdateDraw(Vector3 handPos, Line currentLine)
+	// Update is called once per frame
+	void FixedUpdate () {
+		if (Input.GetMouseButtonDown (0)) {// first frame mouse is pressed, create a new line.
+			CurrentDrawingLineParent = (GameObject) Instantiate (DrawingLineParentPrefab);
+			CurrentDrawingLineParent.transform.position = Input.mousePosition;
+		}
+		else if (Input.GetMouseButton (0)==true) { // while the mouse is pressed. 
+			{
+				Debug.Log (Time.time - TimeOfLastPointSpawn);
+
+				if (true) {
+					UpdateDraw (Input.mousePosition, CurrentDrawingLineParent);
+					//TimeOfLastPointSpawn = Time.time;
+				}
+			}
+		}
+		else if (Input.GetMouseButtonUp (0)) {
+			CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;
+		}
+			
+	}
+
+
+	void UpdateDraw(Vector3 handPos, GameObject currentLine)
 	{
 		currentTime += Time.deltaTime;
 		if (currentTime > timeBetweenPoints) {
-			LinePoint pt = new LinePoint ();
-			pt.creationTime = Time.time - currentLine.startTime;
+			GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab, currentLine.transform);
+			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+			//LinePoint pt = new LinePoint ();
+			pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;
 			pt.pointVelocity = (handPos - lastPos).normalized;
-			currentLine.AddPoint(pt);
+			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on. 
+			CurrentPointPrefab.Get
+			//pt.sample = TestClip;
+			currentLine.GetComponent<Line>().AddPoint(pt);
+			pt.sample = pt.GetComponent<AudioSource> ();
 			pt.sample.Play ();
+			currentTime = 0;
 		}
 		lastPos = handPos;
 	}
