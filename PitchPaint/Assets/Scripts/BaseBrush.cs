@@ -49,12 +49,13 @@ public class BaseBrush : MonoBehaviour {
 		if (currentTime > timeBetweenPoints) {
 			GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab, currentLine.transform);
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
-			//LinePoint pt = new LinePoint ();
+            //LinePoint pt = new LinePoint ();
+            Debug.Log(currentLine.GetComponent<Line>().startTime);
+            Debug.Log(Time.time);
 			pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;
 			pt.pointVelocity = (handPos - lastPos).normalized;
-			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on. 
-			CurrentPointPrefab.Get
+			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
 			//pt.sample = TestClip;
 			currentLine.GetComponent<Line>().AddPoint(pt);
 			pt.sample = pt.GetComponent<AudioSource> ();
