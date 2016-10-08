@@ -47,17 +47,18 @@ public class Line :MonoBehaviour{
 
 
 	void Update(){ 
-		Debug.Assert (myLine.Count > 0);// Line should not be created without at least 1 point. 
-		if (currentTime > myLine [currentPoint].creationTime) {
-			//"Play Point" 
-			//myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play?
-			if (currentPoint + 1 > myLine.Count - 1) { // check if we have reached last index of line
-				currentPoint = 0;
-			} else {
-				currentPoint += 1;
-				currentTime += 1;
+		if (myLine.Count > 0) {// Check if line has any points first. 
+			if (currentTime > myLine [currentPoint].creationTime) {
+				//"Play Point" 
+				// e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play..
+				if (currentPoint + 1 > myLine.Count - 1) { // check if we have reached last index of line
+					currentPoint = 0; // reset current point to 0
+				} else {
+					currentPoint += 1;
+					currentTime +=Time.deltaTime;
+				}
 			}
-		}
 
+		}
 	}
 }
