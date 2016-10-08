@@ -50,18 +50,21 @@ public class Line :MonoBehaviour{
 	void Update(){
 		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
 			if (currentTime > myLine [currentPoint].creationTime) {
-				//"Play Point" 
-				// e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play..
-				myLine[currentPoint].sample.Play();
+                //"Play Point" 
+                // e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
+                Debug.Log("Playing!");
+                myLine[currentPoint].sample.Stop();
+                myLine[currentPoint].sample.Play();
 				if (currentPoint + 1 > myLine.Count - 1) { // check if we have reached last index of line
 					currentPoint = 0; // reset current point to 0
 					currentTime = 0;
 				} else {
 					currentPoint += 1;
-					currentTime +=Time.deltaTime;
 				}
 			}
 
-		}
+            currentTime += Time.deltaTime;
+
+        }
 	}
 }

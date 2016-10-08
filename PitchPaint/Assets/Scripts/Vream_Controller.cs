@@ -22,7 +22,7 @@ public class Vream_Controller : MonoBehaviour {
 
 	public SteamVR_TrackedObject trackedObj;
 	void Start() {
-		//trackedObj = GetComponent();
+		//trackedObj = GetComponent();rer
 	}
 
 	void Update() {
