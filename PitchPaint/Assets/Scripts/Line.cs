@@ -62,7 +62,6 @@ public class Line :MonoBehaviour{
 					currentPoint += 1;
 				}
 			}
-
             currentTime += Time.deltaTime;
 
         }
