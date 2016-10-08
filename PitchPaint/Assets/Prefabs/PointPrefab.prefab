@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011235165308}
-  - 114: {fileID: 114000012564107134}
   - 82: {fileID: 82000010238475490}
+  - 114: {fileID: 114000012100084210}
   m_Layer: 0
   m_Name: PointPrefab
   m_TagString: Untagged
@@ -50,8 +50,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c462e6030ed2ff3499c798cbaa391f0a, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -115,7 +115,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114000012564107134
+--- !u!114 &114000012100084210
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000010812828144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e126797f7ac47084d859b68dc27a7174, type: 3}
+  m_Script: {fileID: 11500000, guid: 3fc5b212455080b45afb07961cab1005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sample: {fileID: 0}

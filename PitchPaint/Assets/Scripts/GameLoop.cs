@@ -13,6 +13,8 @@ public class GameLoop : MonoBehaviour {
     private Vream_Controller rightController;
     private int soundName = 0;
     private int effectName = 0;
+
+	public BaseBrush myBrush;
     // Use this for initialization
     void Start () {
 
@@ -31,10 +33,17 @@ public class GameLoop : MonoBehaviour {
 		soundtxt = soundTextObj.GetComponent<TextMesh>();
 
         console.text ="heyyy!!";
-        if (rightController.triggerPress)
-        {
-            console.text = "yo yo trigger pressed on right";
-        }
+		if (rightController.triggerPress) {
+			console.text = "yo yo trigger pressed on right";
+			if (myBrush.CurrentDrawingLineParent == null || 
+				myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn == true) {
+				myBrush.StartDraw ();
+			}
+			myBrush.UpdateDraw (Input.mousePosition, myBrush.CurrentDrawingLineParent);
+
+		} else if(myBrush.CurrentDrawingLineParent!=null) {
+			myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;
+		}
 
         if (rightController.dpadPressRight)
         {

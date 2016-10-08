@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLoop.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLoop.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\GameLoop.cs" Line="59" Column="1" />
+      <File FileName="Assets\Scripts\Vream_Controller.cs" Line="57" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

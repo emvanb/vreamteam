@@ -26,7 +26,6 @@ public class Vream_Controller : MonoBehaviour {
 	}
 
 	void Update() {
-        triggerPress = false;
         dpadPressUp = false;
         dpadPressDown = false;
         dpadPressLeft = false;
@@ -39,11 +38,13 @@ public class Vream_Controller : MonoBehaviour {
 			return;
 		}
 
-        triggerPress = controller.GetPressDown(triggerButton);
-		if (triggerPress) {
-			Debug.Log("trigger  down");
+		if(controller.GetPressDown(triggerButton))
+		{
+			triggerPress = true;
 		}
-
+		if (controller.GetPressUp (triggerButton)) {
+			triggerPress = false;
+		}
 		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>.5)
         {
             dpadPressRight = true;
