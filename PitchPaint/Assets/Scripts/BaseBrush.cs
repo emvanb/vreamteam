@@ -29,6 +29,7 @@ public class BaseBrush : MonoBehaviour {
 			pt.CreationTime = Time.time - currentLine.startTime;
 			pt.PointLocation = handPos;
 			pt.Velocity = (handPos - lastPos).normalized;
+			pt.sample = sample;
 			currentLine.AddPoint(pt);
 		}
 		lastPos = handPos;
