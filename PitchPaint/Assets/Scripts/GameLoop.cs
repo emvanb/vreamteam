@@ -14,10 +14,15 @@ public class GameLoop : MonoBehaviour {
     private int soundName = 0;
     private int effectName = 0;
 
+	public AudioClip[] samples = new AudioClip[6];
+	public AudioClip currentSample;
+	private int indexSample = 0;
+	private string[] sampleNames = new string[6];
+
 	public BaseBrush myBrush;
     // Use this for initialization
     void Start () {
-
+		currentSample = samples [indexSample];
 		leftController= leftC.GetComponent<Vream_Controller>();
 		rightController= rightC.GetComponent<Vream_Controller>();
         console = GameObject.Find("Console").GetComponent<TextMesh>();
@@ -45,23 +50,38 @@ public class GameLoop : MonoBehaviour {
 			myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;
 		}
 
-        if (rightController.dpadPressRight)
+        //increment sound
+		if (rightController.dpadPressRight)
         {
             console.text = "right controller right";
-			soundtxt.text = "Sound_" + (soundName + 1).ToString();
+			if (indexSample < samples.Length-1)
+				indexSample++;
+			else
+				indexSample=0;
+			currentSample = samples [indexSample];
+			soundtxt.text = currentSample.name;
         }
 
+		//decrement sound
         if (rightController.dpadPressLeft)
         {
             console.text = "right controllerleft";
-			soundtxt.text = "Sound_" + (soundName - 1).ToString();
+			if (indexSample > 0)
+				indexSample--;
+			else
+				indexSample = samples.Length-1;
+			currentSample = samples[indexSample];
+			soundtxt.text = currentSample.name;
         }
+
+		//increment effects
         if (leftController.dpadPressRight)
         {
             console.text = "leftcontroller right";
 			effecttxt.text = "Effect_" + (soundName + 1).ToString();
         }
 
+		//decrement effects
         if (leftController.dpadPressLeft)
         {
             console.text = "leftcontrollerleft";

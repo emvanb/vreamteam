@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class BaseBrush : MonoBehaviour {
-	public AudioSource sample;
+	public GameObject main;
+	private GameLoop liveGameLoop;
 	float timeBetweenPoints =1;
 	float currentTime = 0;
 	Vector3 lastPos = Vector3.zero;
@@ -18,6 +19,8 @@ public class BaseBrush : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		TimeOfLastPointSpawn= 0;
+		liveGameLoop = main.GetComponent<GameLoop> ();
+		TestClip = liveGameLoop.currentSample;
 	}
 
 	// Update is called once per frame
@@ -43,6 +46,8 @@ public class BaseBrush : MonoBehaviour {
 //	}
 	public void StartDraw()
 	{
+		TestClip = liveGameLoop.currentSample;
+
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
 		CurrentDrawingLineParent.transform.position = Input.mousePosition;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
