@@ -16,13 +16,10 @@ public class BaseBrush : MonoBehaviour {
 	public GameObject DrawingLineParentPrefab;
 	public GameObject CurrentDrawingLineParent;
 	public float TimeOfLastPointSpawn;
-<<<<<<< HEAD
 	public AudioMixerGroup[] AudioMixerGroupArray;
 	public int HeightofSpawnedY;
-=======
 
     private Vector3 lastPoint;
->>>>>>> abcd06d20128182d2e4b6d2ce78567594aa087a8
 	// Use this for initialization
 	void Start () {
 		TimeOfLastPointSpawn= 0;
