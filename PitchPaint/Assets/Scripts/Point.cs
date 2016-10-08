@@ -6,23 +6,24 @@ using System;
 public class LinePoint
 {
 
-
+	public AudioSource sample;
 	// contains vector3 to for ponit location adn vector3 for velocity
-	public Vector3 PointLocation{
+	public Vector3 pointLocation{
 		get;
 		set;
 	}
 
-	public Vector3 Velocity{ // velocity of point
+	public Vector3 pointVelocity{ // velocity of point
 		get;
 		set;
 
 	}
 
-	public float CreationTime {
+	public float creationTime { // creation time 
 		get;
 		set;
 
 	}
-		
+
 }
+

@@ -26,9 +26,9 @@ public class BaseBrush : MonoBehaviour {
 		currentTime += Time.deltaTime;
 		if (currentTime > timeBetweenPoints) {
 			LinePoint pt = new LinePoint ();
-			pt.CreationTime = Time.time - currentLine.startTime;
-			pt.PointLocation = handPos;
-			pt.Velocity = (handPos - lastPos).normalized;
+			pt.creationTime = Time.time - currentLine.startTime;
+			pt.pointLocation = handPos;
+			pt.pointVelocity = (handPos - lastPos).normalized;
 			currentLine.AddPoint(pt);
 		}
 		lastPos = handPos;
