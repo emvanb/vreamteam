@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class Line : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+public class Line{
+
+	// line class Empty array.
+	// a function to add a single point.
+	List<LinePoint> myLine =  new List<LinePoint>();
+
+	public void AddPoint(LinePoint PointToAdd){ // Add a point to the line
+		myLine.Add (PointToAdd);
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void Remove(){ // removes last indexed point
+		if (myLine.Count > 0) {
+			myLine.RemoveAt (myLine.Count - 1);
+		}
+
 	}
+
+
+
 }
