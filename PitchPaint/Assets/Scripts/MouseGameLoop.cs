@@ -4,7 +4,7 @@ using System.Collections;
 public class MouseGameLoop : MonoBehaviour
 {
     
-    public BaseBrush myBrush;
+    public MouseBrush myBrush;
     // Use this for initialization
     void Start()
     {

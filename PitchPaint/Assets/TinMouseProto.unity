@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18053588, g: 0.22601774, b: 0.30718702, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -201,8 +201,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1727821098}
-  - 114: {fileID: 1727821097}
   - 114: {fileID: 1727821099}
+  - 114: {fileID: 1727821100}
   m_Layer: 0
   m_Name: TestBrush
   m_TagString: Untagged
@@ -210,27 +210,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1727821097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1727821096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01aa03e0d4fcb460fb8a6e99765cc383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sample: {fileID: 0}
-  PointPrefab: {fileID: 1000014020933106, guid: 5aacdb7017c2e7546b8463c1c276fffb,
-    type: 2}
-  LastMousePos: {x: 0, y: 0, z: 0}
-  CurrentMousePos: {x: 0, y: 0, z: 0}
-  TestClip: {fileID: 8300000, guid: 0447a13bfbb164c92a770264db72dc3c, type: 3}
-  DrawingLineParentPrefab: {fileID: 1000010390826042, guid: f0f0ca6894102124f897e9ca87234dde,
-    type: 2}
-  CurrentDrawingLineParent: {fileID: 0}
-  TimeOfLastPointSpawn: 0
 --- !u!4 &1727821098
 Transform:
   m_ObjectHideFlags: 0
@@ -255,7 +234,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b56914c90750154d96937128c3ed25d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBrush: {fileID: 1727821097}
+  myBrush: {fileID: 1727821100}
+--- !u!114 &1727821100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1727821096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a053914fb08564da994ec341daa815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PointPrefab: {fileID: 1000014020933106, guid: 5aacdb7017c2e7546b8463c1c276fffb,
+    type: 2}
+  EmptyPointPrefab: {fileID: 1000013733396036, guid: 7f1d21ecb6ccfe34aa8450cd8c34ca4a,
+    type: 2}
+  LastMousePos: {x: 0, y: 0, z: 0}
+  CurrentMousePos: {x: 0, y: 0, z: 0}
+  TestClip: {fileID: 8300000, guid: 0447a13bfbb164c92a770264db72dc3c, type: 3}
+  DrawingLineParentPrefab: {fileID: 1000010390826042, guid: f0f0ca6894102124f897e9ca87234dde,
+    type: 2}
+  CurrentDrawingLineParent: {fileID: 0}
+  TimeOfLastPointSpawn: 0
+  AudioMixerGroupArray: []
+  HeightofSpawnedY: 0
 --- !u!1 &1805669940
 GameObject:
   m_ObjectHideFlags: 0
