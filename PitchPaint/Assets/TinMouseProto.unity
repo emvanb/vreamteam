@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sample: {fileID: 0}
-  PointPrefab: {fileID: 1000010812828144, guid: b88aba4560a1b0246b53af88ebdb9fad,
+  PointPrefab: {fileID: 1000014020933106, guid: 5aacdb7017c2e7546b8463c1c276fffb,
     type: 2}
   LastMousePos: {x: 0, y: 0, z: 0}
   CurrentMousePos: {x: 0, y: 0, z: 0}

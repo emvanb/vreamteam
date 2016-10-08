@@ -24,7 +24,8 @@ public class MouseGameLoop : MonoBehaviour
             {
                 myBrush.StartDraw();
             }
-            myBrush.UpdateDraw(Input.mousePosition, myBrush.CurrentDrawingLineParent);
+            Vector3 pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
+            myBrush.UpdateDraw(Camera.main.ScreenToWorldPoint(pos), myBrush.CurrentDrawingLineParent);
 
         }
         else if (myBrush.CurrentDrawingLineParent != null)

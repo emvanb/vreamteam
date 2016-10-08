@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class BaseBrush : MonoBehaviour {
-	public AudioSource sample;
+	public GameObject main;
+	private GameLoop liveGameLoop;
 	float timeBetweenPoints =1;
 	float currentTime = 0;
 	Vector3 lastPos = Vector3.zero;
@@ -14,10 +16,18 @@ public class BaseBrush : MonoBehaviour {
 	public GameObject DrawingLineParentPrefab;
 	public GameObject CurrentDrawingLineParent;
 	public float TimeOfLastPointSpawn;
+<<<<<<< HEAD
+	public AudioMixerGroup[] AudioMixerGroupArray;
+	public int HeightofSpawnedY;
+=======
 
+    private Vector3 lastPoint;
+>>>>>>> abcd06d20128182d2e4b6d2ce78567594aa087a8
 	// Use this for initialization
 	void Start () {
 		TimeOfLastPointSpawn= 0;
+		liveGameLoop = main.GetComponent<GameLoop> ();
+		TestClip = liveGameLoop.currentSample;
 	}
 
 	// Update is called once per frame
@@ -43,27 +53,93 @@ public class BaseBrush : MonoBehaviour {
 //	}
 	public void StartDraw()
 	{
+		TestClip = liveGameLoop.currentSample;
+
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
 		CurrentDrawingLineParent.transform.position = Input.mousePosition;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
-	}
+        lastPoint =  new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
+        lastPoint = Camera.main.ScreenToWorldPoint(lastPoint);
+            
+    }
 	public void UpdateDraw(Vector3 handPos, GameObject currentLine)
 	{
 		currentTime += Time.deltaTime;
 		if (currentTime > timeBetweenPoints) {
 			GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab, currentLine.transform);
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+            CurrentPointPrefab.transform.position = (handPos + lastPoint) /2.0f;
+            CurrentPointPrefab.transform.LookAt(handPos);
+            CurrentPointPrefab.transform.localScale = new Vector3(.5f,.5f,(handPos - lastPoint).magnitude *.8f );
             //LinePoint pt = new LinePoint ();
-			pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
+            pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;
 			pt.pointVelocity = (handPos - lastPos).normalized;
+
+			//setting up the audiosourcemixer pitch
+			Debug.Log("HandPos is: " + handPos);
+			HeightofSpawnedY = (int)Mathf.Round(handPos.y*10)/100; // 
+			Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
+			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
+
 			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
 			//pt.sample = TestClip;
 			currentLine.GetComponent<Line>().AddPoint(pt);
 			pt.sample = pt.GetComponent<AudioSource> ();
 			pt.sample.Play ();
 			currentTime = 0;
+            lastPoint = handPos;
 		}
 		lastPos = handPos;
 	}
+
+
+//	public int ConvertHandPosToHeightInt (Vector3 CurrentHandPos){ // Dont ask
+//		int HeightToReturn;
+//		if (CurrentHandPos <= 0) {
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>0 &&<=1){
+//			HeightToReturn = 1;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<2){
+//			HeightToReturn = 2;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//
+//
+//	}
+
+
+
 }
