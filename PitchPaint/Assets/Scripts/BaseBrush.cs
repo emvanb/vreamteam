@@ -45,15 +45,14 @@ public class BaseBrush : MonoBehaviour {
 //		}
 //			
 //	}
-	public void StartDraw()
+	public void StartDraw(Vector3 handPos)
 	{
 		TestClip = liveGameLoop.currentSample;
 
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
 		CurrentDrawingLineParent.transform.position = Input.mousePosition;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
-        lastPoint =  new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
-        lastPoint = Camera.main.ScreenToWorldPoint(lastPoint);
+		lastPoint = handPos;
             
     }
 	public void UpdateDraw(Vector3 handPos, GameObject currentLine)

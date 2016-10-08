@@ -18,13 +18,13 @@ public class MouseGameLoop : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButton(0))
-        {
+		{
+			Vector3 pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
             if (myBrush.CurrentDrawingLineParent == null ||
                 myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn == true)
             {
-                myBrush.StartDraw();
+				myBrush.StartDraw(Camera.main.ScreenToWorldPoint(pos));
             }
-            Vector3 pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
             myBrush.UpdateDraw(Camera.main.ScreenToWorldPoint(pos), myBrush.CurrentDrawingLineParent);
 
         }
