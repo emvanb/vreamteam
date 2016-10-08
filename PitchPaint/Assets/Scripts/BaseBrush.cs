@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class BaseBrush : MonoBehaviour {
 	public GameObject main;
@@ -15,8 +16,13 @@ public class BaseBrush : MonoBehaviour {
 	public GameObject DrawingLineParentPrefab;
 	public GameObject CurrentDrawingLineParent;
 	public float TimeOfLastPointSpawn;
+<<<<<<< HEAD
+	public AudioMixerGroup[] AudioMixerGroupArray;
+	public int HeightofSpawnedY;
+=======
 
     private Vector3 lastPoint;
+>>>>>>> abcd06d20128182d2e4b6d2ce78567594aa087a8
 	// Use this for initialization
 	void Start () {
 		TimeOfLastPointSpawn= 0;
@@ -68,6 +74,13 @@ public class BaseBrush : MonoBehaviour {
             pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
 			pt.pointLocation = handPos;
 			pt.pointVelocity = (handPos - lastPos).normalized;
+
+			//setting up the audiosourcemixer pitch
+			Debug.Log("HandPos is: " + handPos);
+			HeightofSpawnedY = (int)Mathf.Round(handPos.y*10)/100; // 
+			Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
+			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
+
 			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
 			//pt.sample = TestClip;
 			currentLine.GetComponent<Line>().AddPoint(pt);
@@ -78,4 +91,54 @@ public class BaseBrush : MonoBehaviour {
 		}
 		lastPos = handPos;
 	}
+
+
+//	public int ConvertHandPosToHeightInt (Vector3 CurrentHandPos){ // Dont ask
+//		int HeightToReturn;
+//		if (CurrentHandPos <= 0) {
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>0 &&<=1){
+//			HeightToReturn = 1;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<2){
+//			HeightToReturn = 2;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//		else if (CurrentHandPos>1 &&<1){
+//			HeightToReturn = 0;
+//			return(HeightToReturn);
+//		}
+//
+//
+//	}
+
+
+
 }
