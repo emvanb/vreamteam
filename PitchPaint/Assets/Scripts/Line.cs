@@ -44,11 +44,12 @@ public class Line :MonoBehaviour{
 	public int currentPoint =0;  //current point indexhe current point 
 
 	public LinePoint OriginPoint; // OriginPoint aka first index of line. 
+	public bool LineDrawn= false;
 
 
-	void Update(){ 
-		if (myLine.Count > 0) {// Check if line has any points first. 
-			if (currentTime >= myLine [currentPoint].creationTime) {
+	void Update(){
+		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
+			if (currentTime > myLine [currentPoint].creationTime) {
 				//"Play Point" 
 				// e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play..
 				myLine[currentPoint].sample.Play();
