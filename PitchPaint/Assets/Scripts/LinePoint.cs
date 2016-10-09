@@ -41,7 +41,6 @@ public class LinePoint: MonoBehaviour {
         colors[16] = new Vector3(.3f, 0, 1.0f);
         colors[17] = new Vector3(.44f, 0, 1.0f);
         colors[18] = new Vector3(.58f, 0, 1.0f);
-        colors[19] = new Vector3(.72f, 0, 1.0f);
 
         deltaT = 1;
 		//if (tempRenderer.materials[i]!=null && tempRenderer.materials[i].mainTexture != null)
@@ -77,58 +76,32 @@ public class LinePoint: MonoBehaviour {
 	}
 	public void Update()
 	{
-		if (animating) {
-			Vector3 currentPoint = startPoint;
-			currentTime += Time.deltaTime /10.0f;
-			float pointer = currentTime / length;
-			currentPoint += currentTime * transform.forward;
-			if (currentTime > length) {
-				animating = false;
-				currentTime = 0;
+		if (tempRenderer != null) {
+			if (animating) {
+				Vector3 currentPoint = startPoint;
+				currentTime += Time.deltaTime / 10.0f;
+				float pointer = currentTime / length;
+				currentPoint += currentTime * transform.forward;
+				if (currentTime > length) {
+					animating = false;
+					currentTime = 0;
+				}
+				tempRenderer.materials [0].SetFloat ("_Sin", Mathf.Sin (Mathf.PI * pointer / 2) * 1.5f);
+			} else {
+				tempRenderer.materials [0].SetFloat ("_Sin", 0);
 			}
-			tempRenderer.materials [0].SetFloat ("_Sin", Mathf.Sin(Mathf.PI*pointer/2)*1.5f);
-		} else {
-			tempRenderer.materials [0].SetFloat ("_Sin", 0);
 		}
 	}
-	public Vector3 convertToRGB(float height)
+	public Vector3 convertToRGB(int height)
 	{
-		float h = height * 6 / 20.0f;
-		float v = .5f;
-		float s = .5f;
-		float i = 0;
-		i = (h);
-		float f = (h-i);
-		if(i %2==0)
-		{
-			f = 1-f;
-		}
-		float m = (float)(v * (1 - s));
-		float n = (float)(v * (1 - s * f));
-		switch ((int)i) {
-		case 6:
-			return new Vector3(0,0,0);
-		case 0:
-			return new Vector3 (v, n, m);
-		case 1:
-			return new Vector3 (n, v, m);
-		case 2:
-			return new Vector3 (m, v, n);
-		case 3:
-			return new Vector3 (m, n, v);
-		case 4:
-			return new Vector3 (n, m, v);
-		case 5:
-			return new Vector3 (v, m, n);
-		}
-		return new Vector3 (0, 0, 0);
+		return colors [Mathf.Clamp(height,0,colors.Length-1)];
 	}
 	public void SetHeightColor(float height)
 	{
 	    tempRenderer = GetComponentInChildren<MeshRenderer>();
 
 		//If we have a MeshRenderer on our object
-		Vector3 h =convertToRGB(height);
+		Vector3 h =convertToRGB((int)height);
 		if (tempRenderer != null)
 		{
 			tempRenderer.materials[0].SetVector("_OutlineColor", new Vector4(h.x,h.y,h.z,1));

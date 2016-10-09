@@ -27,7 +27,7 @@ public class BaseBrush : MonoBehaviour {
 	void Start () {
 		TimeOfLastPointSpawn= 0;
 		liveGameLoop = main.GetComponent<GameLoop> ();
-		TestClip = liveGameLoop.currentSample;
+		//TestClip = liveGameLoop.currentSample;
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
 		CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn = true;
 	}
@@ -55,7 +55,7 @@ public class BaseBrush : MonoBehaviour {
 //	}
 	public void StartDraw(Vector3 handPos)
 	{
-		TestClip = liveGameLoop.currentSample;
+		//TestClip = liveGameLoop.currentSample;
 
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
 		liveGameLoop.SpawnedLines.Add (CurrentDrawingLineParent);
@@ -81,8 +81,10 @@ public class BaseBrush : MonoBehaviour {
 		pt.sample = pt.GetComponent<AudioSource> ();
 
 		if(!pt.sample.isPlaying)
+		{
 			pt.sample.Play ();
-    }
+    	}
+	}
 
     void MoveCurrentCylinder(Vector3 lastPos, Vector3 currentPos)
     {
@@ -96,8 +98,7 @@ public class BaseBrush : MonoBehaviour {
 		currentTime += Time.deltaTime * speed;
 		MoveCurrentCylinder(lastPoint, handPos);
 		if (currentTime > timeBetweenPoints) {
-
-			Debug.Log ("Current Time too high");
+			
 			GameObject CurrentPointPrefab = ProducePoint (handPos);
 			CurrentPointPrefab.transform.parent = CurrentDrawingLineParent.transform;
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
@@ -124,7 +125,14 @@ public class BaseBrush : MonoBehaviour {
 		}
         lastPos = handPos;
 	}
-
+	public void UpdateLastCylinder()
+	{
+		if(currentCylinder!=null)
+		{
+		currentCylinder.GetComponent<LinePoint> ().SetHeightColor (HeightofSpawnedY);
+		currentCylinder.GetComponent<LinePoint> ().UpdateStartAndEnd ();
+		}
+	}
 	public GameObject ProducePoint(Vector3 position)
 	{
 		GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab);
@@ -139,7 +147,6 @@ public class BaseBrush : MonoBehaviour {
 
 
 		//setting up the audiosourcemixer pitch
-		Debug.Log("HandPos is: " + position);
 		HeightofSpawnedY = (int)Mathf.Round((position.y-0.5f)*10); // 
 		HeightofSpawnedY = Mathf.Clamp(HeightofSpawnedY,0,AudioMixerGroupArray.Length-1);
 

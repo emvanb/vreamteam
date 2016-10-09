@@ -1,0 +1,658 @@
+IniIinlizi enizine neriion: 5.s.1f1  64.4f.8b1 b(0f)9f48bbbG0fx)ev
+icG: creevting  cericaticlie det;i e hcelded=1
+; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8144 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8144 MB
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.126 seconds
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\NVIDIA\Desktop\VREAMTEAM\vreamteam\PitchPaint\FinalBuild_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  0.037 seconds
+Plalttform assessely: bl:\UsCers\NVI\NVIDIAA\Desktesktop\VREAMMTEAM\vreamteamteamP\PitchPaint\FinBuild_ld_Datta\MManagenade\System.CCorre.dlll (this mhis esesagee is harmless)
+
+Platfform aassemblymbly: C:\UUsers\NVIDIAI\Desktop\oVRp\VTREAMTEAM\vram\Piam\Piaint\FinalBuiain_Datt\MaFagnalBuysild_dll atthas maessad\e is Systless)
+m.dll (this message is harmless)
+<RI> Initializing input.
+<RI> Initializing input.
+<RI> <nput> initializedtializ
+ed.
+desktop: 1920x1080 60Hz; virtuald 19sktx1080 atx1080 0,0Hz
+; virtual: 1920x1080 at 0,0
+<RI> Initialized touch support.
+<RI> Initialized touch support.
+OpenVR initialized!
+ 
+(Filename:  Line: 347)
+
+WARNING: Shader Unsupported: 'Outlined/Silhouetted Diffuse' - Pass 'OUTLINE' has no vertex shader
+VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_IPC_ConnectFailed: "Connect to VR Server Failed (301)"!
+ 
+(Filename:  Line: 771)
+
+UnloadTime: 0.534886 ms
+OpenVR initialized!
+ 
+(Filename:  Line: 347)
+
+[VRDevice] Successfully created device OpenVR.
+WARNING: Shader Unsupported: 'Outlined/Silhouetted Diffuse' - Pass 'OUTLINE' has no vertex shader
+UnloadTime: 0.477116 ms
+Connected to lighthouse:LHR-1C07D8B5
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Setting up 3 worker threads for Enlighten.
+  Thread -> id: 15f4 -> priority: 1 
+  Thread -> id: 36c8 -> priority: 1 
+  Thread -> id: 3704 -> priority: 1 
+pad  center
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.7, 1.5, -0.5)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  center
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.7, 1.5, -0.5)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  center
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.8, 1.5, -0.3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  center
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.6, 1.6, -0.8)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  center
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 1.8, -0.8)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.4, 1.8, -0.9)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Playing in startDraw!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.8, 1.7, -0.8)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (1.1, 1.7, -0.3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.9, 1.7, 0.3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 1.7, 0.4)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (-0.1, 1.9, 0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (-0.2, 2.0, -0.5)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 2.1, -0.8)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.8, 2.0, -0.6)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (1.1, 1.8, -0.2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (1.1, 1.3, 0.2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.8, 0.8, 0.4)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.8, 0.5, -0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.9, 0.5, -0.5)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 0.7, -0.9)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.0, 0.8, -0.7)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (-0.2, 0.8, -0.2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.2, 0.8, 0.2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 1.1, -1.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Playing in startDraw!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.8, 1.1, -0.8)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.9, 1.1, -0.2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 1.0, 0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.0, 0.8, -0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 1.2, -0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  down
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 1.5, -0.6)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Playing in startDraw!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.7, 1.6, -0.2)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 1.8, -0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.1, 1.9, -0.6)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 1.4, -0.6)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.7, 1.4, -0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 1.7, 0.1)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (-0.1, 1.6, -0.3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.0, 1.3, -0.7)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.3, 0.9, -0.6)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+pad  left
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 0.2, -0.4)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Playing in startDraw!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 0.4, -0.3)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+IndexOutOfRangeException: Array index is out of range.
+  at LinePoint.convertToRGB (Int32 height) [0x00000] in <filename unknown>:0 
+  at LinePoint.SetHeightColor (Single height) [0x00000] in <filename unknown>:0 
+  at BaseBrush.UpdateDraw (Vector3 handPos) [0x00000] in <filename unknown>:0 
+  at GameLoop.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 0.6, -0.4)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.5, 1.2, -0.4)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+Current Time too high
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+HandPos is: (0.6, 1.8, -0.4)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 42)
+
+OpenVR Shutdown
+ 
+(Filename:  Line: 701)
+

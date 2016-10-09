@@ -66,26 +66,42 @@ public class Line :MonoBehaviour{
 
 	public LinePoint OriginPoint; // OriginPoint aka first index of line. 
 	public bool LineDrawn= false;
-
+	private bool firstLoop=true;
     private int soundIndex = 0;
 
 	void Update(){
+
 		if (endTime < startTime + 2) {
 			endTime = startTime + 2;
 		}
-		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
+		if (soundIndexes.Count == 1 && firstLoop) {
+
+			currentTime += Time.deltaTime;
+			if (currentTime > endTime - startTime) {
+				currentTime = 0;
+				firstLoop = false;
+				soundIndex = 0;	
+			}	
+		}
+		else if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
 			if (soundIndex < soundIndexes.Count) {	
 				if (currentTime > myLine [soundIndexes [soundIndex]].creationTime && myLine [soundIndexes [soundIndex]].sample != null) {
 					//"Play Point" 
 					// e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
 					myLine [soundIndexes [soundIndex]].sample.Stop ();
 					myLine [soundIndexes [soundIndex]].sample.Play ();
-
+					myLine [soundIndexes [soundIndex]].animating=true;
 					soundIndex += 1;
 					
 					currentPoint = 0;
-				} else if (soundIndex>0 && soundIndexes.Count>1){
-					if (currentTime > myLine [soundIndexes [soundIndex - 1]].creationTime + currentPoint * myLine [soundIndexes [soundIndex - 1]].deltaT) {
+				} else{
+					float thisStart = 0;
+					float deltaT =myLine [soundIndexes [soundIndex]].deltaT;
+					if (soundIndex > 0) {
+						thisStart=myLine [soundIndexes [soundIndex - 1]].creationTime;
+						deltaT = myLine [soundIndexes [soundIndex - 1]].deltaT;
+					}
+					if (currentTime > thisStart + currentPoint * deltaT) {
 						currentPoint += 1;
 						myLine [soundIndexes [soundIndex - 1] + currentPoint].animating = true;
 					}
@@ -93,6 +109,7 @@ public class Line :MonoBehaviour{
 			} else if (currentTime > endTime - startTime) {
 				currentTime = 0;
 				soundIndex = 0;	
+				myLine [0].animating = true;
 			}	
 	
             currentTime += Time.deltaTime;
