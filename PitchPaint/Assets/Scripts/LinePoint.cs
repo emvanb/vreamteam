@@ -5,13 +5,21 @@ using System;
 
 public class LinePoint: MonoBehaviour {
 	private MeshRenderer tempRenderer;
-	private bool animating = false;
+	public bool animating = false;
 	private float currentTime = 0;
 	private Vector3 startPoint;
 	private Vector3 endPoint;
 	private float length;
-	public void Start()
+
+    //This is for determining when to animate
+    public float deltaT
+    {
+        get;
+        set;
+    }
+    public void Start()
 	{
+        deltaT = 1;
 		//if (tempRenderer.materials[i]!=null && tempRenderer.materials[i].mainTexture != null)
 
 		tempRenderer = GetComponentInChildren<MeshRenderer>();
@@ -39,7 +47,7 @@ public class LinePoint: MonoBehaviour {
 	{
 		if (animating) {
 			Vector3 currentPoint = startPoint;
-			currentTime += Time.deltaTime;
+			currentTime += Time.deltaTime/deltaT;
 			currentPoint += currentTime * transform.forward;
 			if (currentTime > length) {
 				animating = false;
