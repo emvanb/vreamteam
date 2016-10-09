@@ -52,7 +52,7 @@ public class Line :MonoBehaviour{
 			endTime = startTime + 4;
 		}
 		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
-			if (currentTime > myLine [currentPoint].creationTime) {
+			if (currentTime > myLine [currentPoint].creationTime  && myLine[currentPoint].sample!=null) {
                 //"Play Point" 
                 // e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
                 myLine[currentPoint].sample.Stop();

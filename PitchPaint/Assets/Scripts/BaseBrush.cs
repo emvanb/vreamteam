@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 public class BaseBrush : MonoBehaviour {
 	public GameObject main;
 	private GameLoop liveGameLoop;
-	float timeBetweenPoints = 1;
+	float timeBetweenPoints = .6f;
 	float currentTime = 0;
 	Vector3 lastPos = Vector3.zero;
     public GameObject PointPrefab;
@@ -61,7 +61,7 @@ public class BaseBrush : MonoBehaviour {
 		lastPoint = handPos;
 		lastPos = lastPoint + Vector3.one * .05f;
 		currentTime = 0;
-        currentCylinder =  (GameObject)Instantiate(EmptyPointPrefab);
+		currentCylinder =  (GameObject)Instantiate(EmptyPointPrefab,CurrentDrawingLineParent.transform);
         MoveCurrentCylinder(lastPoint, lastPoint + Vector3.one * .05f);
 
 		GameObject CurrentPointPrefab = ProducePoint (handPos);
@@ -105,15 +105,10 @@ public class BaseBrush : MonoBehaviour {
 		{
 			HeightofSpawnedY = (int)Mathf.Round((currentCylinder.transform.position.y-0.5f)*10);
 			currentCylinder.GetComponent<LinePoint> ().SetHeightColor (HeightofSpawnedY);
-			currentCylinder = (GameObject)Instantiate(EmptyPointPrefab);
+			currentCylinder = (GameObject)Instantiate(EmptyPointPrefab,CurrentDrawingLineParent.transform);
 			MoveCurrentCylinder(lastPos, handPos);
 			lastPoint = handPos;
 		}
-        if (Vector3.Distance(handPos, lastPoint) > 1)
-        {
-            currentCylinder = (GameObject)Instantiate(EmptyPointPrefab);
-            MoveCurrentCylinder(lastPos, handPos);
-        }
         lastPos = handPos;
 	}
 

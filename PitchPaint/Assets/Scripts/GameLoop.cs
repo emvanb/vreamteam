@@ -67,6 +67,7 @@ public class GameLoop : MonoBehaviour {
 			else
 				indexSample=0;
 			currentSample = samples [indexSample];
+			myBrush.TestClip=currentSample;
 			soundtxt.text = currentSample.name;
         }
 
@@ -79,6 +80,8 @@ public class GameLoop : MonoBehaviour {
 			else
 				indexSample = samples.Length-1;
 			currentSample = samples[indexSample];
+
+			myBrush.TestClip=currentSample;
 			soundtxt.text = currentSample.name;
         }
 
@@ -116,7 +119,9 @@ public class GameLoop : MonoBehaviour {
     }
 
 	public void DeleteLastLine(){
-		Destroy (SpawnedLines [SpawnedLines.Count - 1]);
-
+		if (SpawnedLines.Count > 0) {
+			Destroy (SpawnedLines [SpawnedLines.Count - 1]);
+			SpawnedLines.RemoveAt (SpawnedLines.Count - 1);
+		}
 	}
 }
