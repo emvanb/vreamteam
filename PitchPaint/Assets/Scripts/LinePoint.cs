@@ -75,6 +75,10 @@ public class LinePoint: MonoBehaviour {
 	}
 	public AudioSource sample;
 	// contains vector3 to for ponit location adn vector3 for velocity
+    /// <summary>
+    /// Thoughts: I need a list of all points, their creation times, then the shader needs to know the reference point for shading and the length. The reference point is to follow the  length of  the object,
+    /// and as it  moves nearby points should color more strongly  based on distance. Normalize distance to 1- dist/length, which should give us just about what we want. Clamp at zero.
+    /// </summary>
 	public Vector3 pointLocation{
 		get;
 		set;
