@@ -47,13 +47,13 @@ public class GameLoop : MonoBehaviour {
 		if (rightController.triggerPress) {
 			console.text = "yo yo trigger pressed on right";
 			if (myBrush.CurrentDrawingLineParent == null || myBrush.CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn == true) {
-				myBrush.StartDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
+				myBrush.StartDraw (rightC.transform.position);
 			} 
 			/*else if (myBrush.CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn == true) {
 				Debug.Log ("linedrawn");
 				myBrush.StartDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
 			}*/
-			myBrush.UpdateDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
+			myBrush.UpdateDraw (rightC.transform.position);
 
 		} else if(myBrush.CurrentDrawingLineParent!=null) {
 			myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn = true;
@@ -102,19 +102,19 @@ public class GameLoop : MonoBehaviour {
 		}
 
 		//increment effects
-        if (leftController.dpadPressRight)
-        {
-            console.text = "leftcontroller right";
-			effecttxt.text = "Effect_" + (soundName + 1).ToString();
-        }
+        //if (leftController.dpadPressRight)
+        //{
+          //  console.text = "leftcontroller right";
+		//	effecttxt.text = "Effect_" + (soundName + 1).ToString();
+      //  }
 
 		//decrement effects
-        if (leftController.dpadPressLeft)
-        {
-            console.text = "leftcontrollerleft";
-			effecttxt.text = "Effect_" + (soundName - 1).ToString();
-        }
-		if (leftController.dpadPressDown) {
+    //    if (leftController.dpadPressLeft)
+        //{
+      //      console.text = "leftcontrollerleft";
+	//		effecttxt.text = "Effect_" + (soundName - 1).ToString();
+//        }
+		if (leftController.dpadPressDown || leftController.dpadPressLeft || leftController.dpadPressRight) {
 			DeleteLastLine ();
 		}
     }

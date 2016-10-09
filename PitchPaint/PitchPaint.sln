@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{6B0CF29F-EEB1-8F27-5F65-8338AE3B4E7C}") = "PitchPaint", "Assembly-CSharp.csproj", "{0C91EA16-7B52-9E03-851F-CDD8DE489988}"
+EndProject
+Project("{6B0CF29F-EEB1-8F27-5F65-8338AE3B4E7C}") = "PitchPaint", "Assembly-CSharp-Editor.csproj", "{2B500ED4-B236-961E-6CF0-377D6FF400E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C91EA16-7B52-9E03-851F-CDD8DE489988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C91EA16-7B52-9E03-851F-CDD8DE489988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C91EA16-7B52-9E03-851F-CDD8DE489988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C91EA16-7B52-9E03-851F-CDD8DE489988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B500ED4-B236-961E-6CF0-377D6FF400E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B500ED4-B236-961E-6CF0-377D6FF400E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B500ED4-B236-961E-6CF0-377D6FF400E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B500ED4-B236-961E-6CF0-377D6FF400E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
