@@ -129,12 +129,14 @@ public class BaseBrush : MonoBehaviour {
 		//setting up the audiosourcemixer pitch
 		Debug.Log("HandPos is: " + position);
 		HeightofSpawnedY = (int)Mathf.Round((position.y-0.5f)*10); // 
+		HeightofSpawnedY = Mathf.Clamp(HeightofSpawnedY,0,AudioMixerGroupArray.Length-1);
+
 		Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
 		if (!liveGameLoop.UseHarmoniousMixer)
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
 		else {
-			if (HeightofSpawnedY > 12) {
-				HeightofSpawnedY = 12;
+			if (HeightofSpawnedY > HarmoniousGroupArray.Length-1) {
+				HeightofSpawnedY =  HarmoniousGroupArray.Length-1;
 			}
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = HarmoniousGroupArray [HeightofSpawnedY];
 		
