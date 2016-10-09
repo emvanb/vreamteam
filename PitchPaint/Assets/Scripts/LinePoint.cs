@@ -4,12 +4,17 @@ using System.Collections.Generic;
 using System;
 
 public class LinePoint: MonoBehaviour {
-
+	private MeshRenderer tempRenderer;
+	private bool animating = false;
+	private float currentTime = 0;
+	private Vector3 startPoint;
+	private Vector3 endPoint;
+	private float length;
 	public void Start()
 	{
 		//if (tempRenderer.materials[i]!=null && tempRenderer.materials[i].mainTexture != null)
 
-		MeshRenderer tempRenderer = GetComponentInChildren<MeshRenderer>();
+		tempRenderer = GetComponentInChildren<MeshRenderer>();
 
 		//If we have a MeshRenderer on our object
 
@@ -21,10 +26,29 @@ public class LinePoint: MonoBehaviour {
 
 			//Then, set the value that we want
 
-			quickSwapMaterial.SetFloat("_viw", 0);
-			//And stick it back into our renderer. We'll do the SetVector thing every frame.
-
 			tempRenderer.materials[0] = quickSwapMaterial;
+		}
+		animating = true;
+		length = transform.localScale.z;
+		currentTime = 0;
+		startPoint = transform.position - transform.forward * length / 2.0f;
+		endPoint = transform.position + transform.forward * length / 2.0f;
+		tempRenderer.materials [0].SetFloat ("_Len", length);
+		tempRenderer.materials [0].SetVector ("_Forward", new Vector4 (transform.forward.x, transform.forward.y, transform.forward.z, 0));
+	}
+	public void Update()
+	{
+		if (animating) {
+			Vector3 currentPoint = startPoint;
+			currentTime += Time.deltaTime;
+			currentPoint += currentTime * transform.forward;
+			if (currentTime > length) {
+				animating = false;
+				currentTime = 0;
+			}
+			tempRenderer.materials [0].SetVector ("_RefPos", new Vector4 (currentPoint.x, currentPoint.y, currentPoint.z, 0));
+		} else {
+			tempRenderer.materials [0].SetVector ("_RefPos", new Vector4 (1000,1000,1000, 0));
 		}
 	}
 	public Vector3 convertToRGB(float height)
@@ -61,7 +85,7 @@ public class LinePoint: MonoBehaviour {
 	}
 	public void SetHeightColor(float height)
 	{
-		MeshRenderer tempRenderer = GetComponentInChildren<MeshRenderer>();
+	    tempRenderer = GetComponentInChildren<MeshRenderer>();
 
 		//If we have a MeshRenderer on our object
 		Vector3 h =convertToRGB(height);
