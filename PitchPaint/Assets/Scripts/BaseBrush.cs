@@ -80,8 +80,8 @@ public class BaseBrush : MonoBehaviour {
 		CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt,true);
 		pt.sample = pt.GetComponent<AudioSource> ();
 
-		//Commenting out this to testthe double play on start of line, since line update should call it. 
-		//pt.sample.Play ();
+		if(!pt.sample.isPlaying)
+			pt.sample.Play ();
     }
 
     void MoveCurrentCylinder(Vector3 lastPos, Vector3 currentPos)
@@ -107,7 +107,8 @@ public class BaseBrush : MonoBehaviour {
 			CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt,true);
 
 			pt.sample = pt.GetComponent<AudioSource> ();
-			pt.sample.Play ();
+			if(!pt.sample.isPlaying)
+				pt.sample.Play ();
 			currentTime = 0;
             lastPoint = handPos;
 		}

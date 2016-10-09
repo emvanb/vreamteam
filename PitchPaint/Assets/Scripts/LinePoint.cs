@@ -11,6 +11,9 @@ public class LinePoint: MonoBehaviour {
 	private Vector3 endPoint;
 	private float length;
 
+    private Vector3[] colors = new Vector3[19];
+    
+
     //This is for determining when to animate
     public float deltaT
     {
@@ -19,6 +22,27 @@ public class LinePoint: MonoBehaviour {
     }
     public void Start()
 	{
+        colors[0] = new Vector3(1.0f, 0.0f, 0.0f);
+        colors[1] = new Vector3(.86f, .15f, 0.0f);
+        colors[2] = new Vector3(.72f, .3f, 0);
+        colors[3] = new Vector3(.58f, .44f, 0);
+        colors[4] = new Vector3(.44f, .58f, 0);
+        colors[5] = new Vector3(.3f, .72f, 0);
+        colors[6] = new Vector3(.15f, .86f, 0.0f);
+        colors[7] = new Vector3(0.0f, 1.0f, 0.0f);
+        colors[8] = new Vector3(0, .86f, .15f);
+        colors[9] = new Vector3(0, .72f, .3f);
+        colors[10] = new Vector3(0, .58f, .44f);
+        colors[11] = new Vector3(0, .44f, .58f);
+        colors[12] = new Vector3(0, .3f, .72f);
+        colors[13] = new Vector3(0, .15f, .86f);
+        colors[14] = new Vector3(0, 0.0f, 1.0f);
+        colors[15] = new Vector3(.15f, 0.0f, 1.0f);
+        colors[16] = new Vector3(.3f, 0, 1.0f);
+        colors[17] = new Vector3(.44f, 0, 1.0f);
+        colors[18] = new Vector3(.58f, 0, 1.0f);
+        colors[19] = new Vector3(.72f, 0, 1.0f);
+
         deltaT = 1;
 		//if (tempRenderer.materials[i]!=null && tempRenderer.materials[i].mainTexture != null)
 
