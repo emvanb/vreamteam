@@ -76,7 +76,8 @@ public class BaseBrush : MonoBehaviour {
         //pt.sample = TestClip;
         currentLine.GetComponent<Line>().AddPoint(pt,true);
 		pt.sample = pt.GetComponent<AudioSource> ();
-		pt.sample.Play ();
+		if(!pt.sample.isPlaying)
+			pt.sample.Play ();
     }
 
     void MoveCurrentCylinder(Vector3 lastPos, Vector3 currentPos)
@@ -101,7 +102,8 @@ public class BaseBrush : MonoBehaviour {
 			//pt.sample = TestClip;
 			currentLine.GetComponent<Line>().AddPoint(pt,true);
 			pt.sample = pt.GetComponent<AudioSource> ();
-			pt.sample.Play ();
+			if(!pt.sample.isPlaying)
+				pt.sample.Play ();
 			currentTime = 0;
             lastPoint = handPos;
 		}
