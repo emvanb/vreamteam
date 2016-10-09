@@ -10,6 +10,7 @@ public class Line :MonoBehaviour{
 	List<LinePoint> myLine =  new List<LinePoint>();
 
 	public void AddPoint(LinePoint PointToAdd){ // Add a point to the line
+		Debug.Log(PointToAdd.creationTime);
 		myLine.Add (PointToAdd);
 
 	}
@@ -48,21 +49,22 @@ public class Line :MonoBehaviour{
 
 
 	void Update(){
-		if (endTime < startTime + 4) {
-			endTime = startTime + 4;
+		if (endTime < startTime + 2) {
+			endTime = startTime + 2;
 		}
 		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
-			if (currentTime > myLine [currentPoint].creationTime  && myLine[currentPoint].sample!=null) {
-                //"Play Point" 
-                // e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
-                myLine[currentPoint].sample.Stop();
-                myLine[currentPoint].sample.Play();
-				if (currentPoint + 1 > myLine.Count - 1) { // check if we have reached last index of line
+			if (currentPoint < myLine.Count) {
+				if (currentTime > myLine [currentPoint].creationTime && myLine [currentPoint].sample != null) {
+					//"Play Point" 
+					// e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
+					myLine [currentPoint].sample.Stop ();
+					myLine [currentPoint].sample.Play ();
+					currentPoint += 1;
+				} 
+			}else if (currentTime > endTime - startTime) {
+				
 					currentPoint = 0; // reset current point to 0
 					currentTime = 0;
-				} else {
-					currentPoint += 1;
-				}
 			}
             currentTime += Time.deltaTime;
 

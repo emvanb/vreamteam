@@ -28,6 +28,8 @@ public class BaseBrush : MonoBehaviour {
 		TimeOfLastPointSpawn= 0;
 		liveGameLoop = main.GetComponent<GameLoop> ();
 		TestClip = liveGameLoop.currentSample;
+		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
+		CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn = true;
 	}
 
 	// Update is called once per frame
@@ -51,7 +53,7 @@ public class BaseBrush : MonoBehaviour {
 //		}
 //			
 //	}
-	public void StartDraw(Vector3 handPos, GameObject currentLine)
+	public void StartDraw(Vector3 handPos)
 	{
 		TestClip = liveGameLoop.currentSample;
 
@@ -68,10 +70,10 @@ public class BaseBrush : MonoBehaviour {
 		GameObject CurrentPointPrefab = ProducePoint (handPos);
 		CurrentPointPrefab.transform.parent = CurrentDrawingLineParent.transform;
 		LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
-		pt.creationTime -=currentLine.GetComponentInChildren<Line>().startTime;
+		pt.creationTime -=CurrentDrawingLineParent.GetComponentInChildren<Line>().startTime;
 
 		//pt.sample = TestClip;
-		currentLine.GetComponent<Line>().AddPoint(pt);
+		CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt);
 		pt.sample = pt.GetComponent<AudioSource> ();
 		pt.sample.Play ();
     }
@@ -82,7 +84,7 @@ public class BaseBrush : MonoBehaviour {
         currentCylinder.transform.LookAt(currentPos);
         currentCylinder.transform.localScale = new Vector3(.05f, .05f, (currentPos - lastPos).magnitude * .8f);
     }
-	public void UpdateDraw(Vector3 handPos, GameObject currentLine)
+	public void UpdateDraw(Vector3 handPos )
 	{
 		float speed = ((handPos - lastPos)/Time.deltaTime).magnitude;
 		currentTime += Time.deltaTime * speed;
@@ -93,10 +95,10 @@ public class BaseBrush : MonoBehaviour {
 			GameObject CurrentPointPrefab = ProducePoint (handPos);
 			CurrentPointPrefab.transform.parent = CurrentDrawingLineParent.transform;
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
-            pt.creationTime -=currentLine.GetComponent<Line>().startTime;
+			pt.creationTime -=CurrentDrawingLineParent.GetComponent<Line>().startTime;
 
 			//pt.sample = TestClip;
-			currentLine.GetComponent<Line>().AddPoint(pt);
+			CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt);
 			pt.sample = pt.GetComponent<AudioSource> ();
 			pt.sample.Play ();
 			currentTime = 0;
