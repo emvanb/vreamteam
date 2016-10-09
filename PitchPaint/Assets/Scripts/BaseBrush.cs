@@ -5,7 +5,7 @@ using UnityEngine.Audio;
 public class BaseBrush : MonoBehaviour {
 	public GameObject main;
 	private GameLoop liveGameLoop;
-	float timeBetweenPoints = 1;
+	float timeBetweenPoints = .6f;
 	float currentTime = 0;
 	Vector3 lastPos = Vector3.zero;
     public GameObject PointPrefab;
@@ -50,16 +50,29 @@ public class BaseBrush : MonoBehaviour {
 //		}
 //			
 //	}
-	public void StartDraw(Vector3 handPos)
+	public void StartDraw(Vector3 handPos, GameObject currentLine)
 	{
 		TestClip = liveGameLoop.currentSample;
 
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
+		liveGameLoop.SpawnedLines.Add (CurrentDrawingLineParent);
 		CurrentDrawingLineParent.transform.position = handPos;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
-        lastPoint = handPos;
-        currentCylinder =  (GameObject)Instantiate(EmptyPointPrefab);
+		lastPoint = handPos;
+		lastPos = lastPoint + Vector3.one * .05f;
+		currentTime = 0;
+		currentCylinder =  (GameObject)Instantiate(EmptyPointPrefab,CurrentDrawingLineParent.transform);
         MoveCurrentCylinder(lastPoint, lastPoint + Vector3.one * .05f);
+
+		GameObject CurrentPointPrefab = ProducePoint (handPos);
+		CurrentPointPrefab.transform.parent = CurrentDrawingLineParent.transform;
+		LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+		pt.creationTime -=currentLine.GetComponentInChildren<Line>().startTime;
+
+		//pt.sample = TestClip;
+		currentLine.GetComponent<Line>().AddPoint(pt);
+		pt.sample = pt.GetComponent<AudioSource> ();
+		pt.sample.Play ();
     }
 
     void MoveCurrentCylinder(Vector3 lastPos, Vector3 currentPos)
@@ -70,26 +83,17 @@ public class BaseBrush : MonoBehaviour {
     }
 	public void UpdateDraw(Vector3 handPos, GameObject currentLine)
 	{
-		currentTime += Time.deltaTime;
-        
+		float speed = ((handPos - lastPos)/Time.deltaTime).magnitude;
+		currentTime += Time.deltaTime * speed;
+		MoveCurrentCylinder(lastPoint, handPos);
 		if (currentTime > timeBetweenPoints) {
-			GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab, currentLine.transform);
+
+			Debug.Log ("Current Time too high");
+			GameObject CurrentPointPrefab = ProducePoint (handPos);
+			CurrentPointPrefab.transform.parent = CurrentDrawingLineParent.transform;
 			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
-            CurrentPointPrefab.transform.position = (handPos + lastPoint) /2.0f;
-            CurrentPointPrefab.transform.LookAt(handPos);
-            CurrentPointPrefab.transform.localScale = new Vector3(.05f,.05f,(handPos - lastPoint).magnitude *.8f );
-            //LinePoint pt = new LinePoint ();
-            pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
-			pt.pointLocation = handPos;
-			pt.pointVelocity = (handPos - lastPos).normalized;
+            pt.creationTime -=currentLine.GetComponent<Line>().startTime;
 
-			//setting up the audiosourcemixer pitch
-			Debug.Log("HandPos is: " + handPos);
-			//HeightofSpawnedY = (int)Mathf.Round(handPos.y*10)/100; // 
-			Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
-			//pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
-
-			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
 			//pt.sample = TestClip;
 			currentLine.GetComponent<Line>().AddPoint(pt);
 			pt.sample = pt.GetComponent<AudioSource> ();
@@ -97,15 +101,44 @@ public class BaseBrush : MonoBehaviour {
 			currentTime = 0;
             lastPoint = handPos;
 		}
-        if (Vector3.Distance(handPos, lastPoint) > 1)
-        {
-            currentCylinder = (GameObject)Instantiate(EmptyPointPrefab);
-            MoveCurrentCylinder(lastPos, handPos);
-        }
+		if (Vector3.Distance(handPos, lastPoint) > .1f)
+		{
+			HeightofSpawnedY = (int)Mathf.Round((currentCylinder.transform.position.y-0.5f)*10);
+			currentCylinder.GetComponent<LinePoint> ().SetHeightColor (HeightofSpawnedY);
+			currentCylinder = (GameObject)Instantiate(EmptyPointPrefab,CurrentDrawingLineParent.transform);
+			MoveCurrentCylinder(lastPos, handPos);
+			lastPoint = handPos;
+		}
         lastPos = handPos;
 	}
 
+	public GameObject ProducePoint(Vector3 position)
+	{
+		GameObject CurrentPointPrefab = (GameObject)Instantiate (PointPrefab);
+		LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+		CurrentPointPrefab.transform.position = (position + lastPoint) /2.0f;
+		CurrentPointPrefab.transform.LookAt(position);
+		CurrentPointPrefab.transform.localScale = new Vector3(.05f,.05f,Mathf.Max((position - lastPoint).magnitude *.8f ,.005f));
+		//LinePoint pt = new LinePoint ();
+		pt.creationTime = Time.time;// - currentLine.GetComponent<Line>().startTime;
+		pt.pointLocation = position;
+		pt.pointVelocity = (position - lastPos)/Time.deltaTime;
 
+
+		//setting up the audiosourcemixer pitch
+		Debug.Log("HandPos is: " + position);
+		HeightofSpawnedY = (int)Mathf.Round((position.y-0.5f)*10); // 
+		Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
+		pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
+
+		pt.SetHeightColor (HeightofSpawnedY);
+
+		//setting up the audiosource volume
+		//pt.GetComponent<AudioSource>().volume = pt.pointVelocity;
+
+		CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
+		return CurrentPointPrefab;
+	}
 //	public int ConvertHandPosToHeightInt (Vector3 CurrentHandPos){ // Dont ask
 //		int HeightToReturn;
 //		if (CurrentHandPos <= 0) {

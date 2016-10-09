@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameLoop : MonoBehaviour {
     public GameObject effectTextObj;
@@ -16,8 +17,12 @@ public class GameLoop : MonoBehaviour {
 
 	public AudioClip[] samples = new AudioClip[6];
 	public AudioClip currentSample;
+
+	private GameObject CurrentPointPrefab;
 	private int indexSample = 0;
 	private string[] sampleNames = new string[6];
+	public List<GameObject> SpawnedLines = new List<GameObject>();
+
 
 	public BaseBrush myBrush;
     // Use this for initialization
@@ -25,7 +30,7 @@ public class GameLoop : MonoBehaviour {
 		currentSample = samples [indexSample];
 		leftController= leftC.GetComponent<Vream_Controller>();
 		rightController= rightC.GetComponent<Vream_Controller>();
-        console = GameObject.Find("Console").GetComponent<TextMesh>();
+        //console = GameObject.Find("Console").GetComponent<TextMesh>();
     }
 
     // Update is called once per frame
@@ -40,10 +45,13 @@ public class GameLoop : MonoBehaviour {
         console.text ="heyyy!!";
 		if (rightController.triggerPress) {
 			console.text = "yo yo trigger pressed on right";
-			if (myBrush.CurrentDrawingLineParent == null || 
-				myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn == true) {
-				myBrush.StartDraw (rightC.transform.position);
-			}
+			if (myBrush.CurrentDrawingLineParent == null || myBrush.CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn == true) {
+				myBrush.StartDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
+			} 
+			/*else if (myBrush.CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn == true) {
+				Debug.Log ("linedrawn");
+				myBrush.StartDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
+			}*/
 			myBrush.UpdateDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
 
 		} else if(myBrush.CurrentDrawingLineParent!=null) {
@@ -59,6 +67,7 @@ public class GameLoop : MonoBehaviour {
 			else
 				indexSample=0;
 			currentSample = samples [indexSample];
+			myBrush.TestClip=currentSample;
 			soundtxt.text = currentSample.name;
         }
 
@@ -71,8 +80,25 @@ public class GameLoop : MonoBehaviour {
 			else
 				indexSample = samples.Length-1;
 			currentSample = samples[indexSample];
+
+			myBrush.TestClip=currentSample;
 			soundtxt.text = currentSample.name;
         }
+
+		if (rightController.dpadPressCenter)
+		{
+			console.text = "right controllerleft";
+			if (CurrentPointPrefab != null) {
+				Destroy (CurrentPointPrefab);
+			}
+		    CurrentPointPrefab = myBrush.ProducePoint (rightC.transform.position);
+			CurrentPointPrefab.GetComponentInChildren<MeshRenderer> ().enabled = false;
+			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+			//pt.sample = TestClip;
+			pt.sample = pt.GetComponent<AudioSource> ();
+			pt.sample.Play ();
+
+		}
 
 		//increment effects
         if (leftController.dpadPressRight)
@@ -87,5 +113,15 @@ public class GameLoop : MonoBehaviour {
             console.text = "leftcontrollerleft";
 			effecttxt.text = "Effect_" + (soundName - 1).ToString();
         }
+		if (leftController.dpadPressDown) {
+			DeleteLastLine ();
+		}
     }
+
+	public void DeleteLastLine(){
+		if (SpawnedLines.Count > 0) {
+			Destroy (SpawnedLines [SpawnedLines.Count - 1]);
+			SpawnedLines.RemoveAt (SpawnedLines.Count - 1);
+		}
+	}
 }
