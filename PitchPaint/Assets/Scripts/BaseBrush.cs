@@ -64,18 +64,24 @@ public class BaseBrush : MonoBehaviour {
 		lastPoint = handPos;
 		lastPos = lastPoint + Vector3.one * .05f;
 		currentTime = 0;
-		currentCylinder =  (GameObject)Instantiate(EmptyPointPrefab,CurrentDrawingLineParent.transform);
-        MoveCurrentCylinder(lastPoint, lastPoint + Vector3.one * .05f);
+		
 
 		GameObject CurrentPointPrefab = ProducePoint (handPos);
 		CurrentPointPrefab.transform.parent = CurrentDrawingLineParent.transform;
 		LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
 		pt.creationTime -=CurrentDrawingLineParent.GetComponentInChildren<Line>().startTime;
 
-		//pt.sample = TestClip;
-		CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt);
+
+        currentCylinder = (GameObject)Instantiate(EmptyPointPrefab, CurrentDrawingLineParent.transform);
+		CurrentDrawingLineParent.GetComponent<Line>().AddPoint(currentCylinder.GetComponent<LinePoint>(), false);
+        MoveCurrentCylinder(lastPoint, lastPoint + Vector3.one * .05f);
+
+        //pt.sample = TestClip;
+		CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt,true);
 		pt.sample = pt.GetComponent<AudioSource> ();
-		pt.sample.Play ();
+
+		//Commenting out this to testthe double play on start of line, since line update should call it. 
+		//pt.sample.Play ();
     }
 
     void MoveCurrentCylinder(Vector3 lastPos, Vector3 currentPos)
@@ -98,7 +104,8 @@ public class BaseBrush : MonoBehaviour {
 			pt.creationTime -=CurrentDrawingLineParent.GetComponent<Line>().startTime;
 
 			//pt.sample = TestClip;
-			CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt);
+			CurrentDrawingLineParent.GetComponent<Line>().AddPoint(pt,true);
+
 			pt.sample = pt.GetComponent<AudioSource> ();
 			pt.sample.Play ();
 			currentTime = 0;
@@ -108,7 +115,9 @@ public class BaseBrush : MonoBehaviour {
 		{
 			HeightofSpawnedY = (int)Mathf.Round((currentCylinder.transform.position.y-0.5f)*10);
 			currentCylinder.GetComponent<LinePoint> ().SetHeightColor (HeightofSpawnedY);
+			currentCylinder.GetComponent<LinePoint> ().UpdateStartAndEnd ();
 			currentCylinder = (GameObject)Instantiate(EmptyPointPrefab,CurrentDrawingLineParent.transform);
+			CurrentDrawingLineParent.GetComponent<Line>().AddPoint(currentCylinder.GetComponent<LinePoint>(), false);
 			MoveCurrentCylinder(lastPos, handPos);
 			lastPoint = handPos;
 		}

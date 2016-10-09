@@ -3,8 +3,8 @@
 Shader "Outlined/Silhouetted Diffuse" {
 	Properties{
 		_Color("Main Color", Color) = (.5,.5,.5,1)
-		_RefPos("Reference Position",Vector)  = (1000,1000,1000,1)
-		_Forward("Reference Position",Vector)  = (0,0,1,1)
+		_Sin("Reference Position",float)  = 0
+		_Forward("Forward Direction",Vector)  = (0,0,1,1)
 		_Len("object Length",float)  =1
 		_OutlineColor("Outline Color", Color) = (0,0,0,1)
 		_Outline("Outline width", Range(0.0, 0.3)) = .005
@@ -26,7 +26,7 @@ Shader "Outlined/Silhouetted Diffuse" {
 
 	uniform float _Outline;
 	uniform float4 _OutlineColor;
-	uniform float4 _RefPos;
+	uniform float _Sin;
 	uniform float4 _Forward;
 	uniform float _Len;
 
@@ -37,19 +37,22 @@ Shader "Outlined/Silhouetted Diffuse" {
 
 		float3 wPos = mul(unity_ObjectToWorld, v.vertex);
 
-		wPos = wPos - _RefPos;
-		wPos.x = wPos.x/_Len;
-		wPos.y = wPos.y/_Len;
-		wPos.z = wPos.z/_Len;
-		float dist = abs(wPos.x * _Forward.x + wPos.y * _Forward.y + wPos.z * _Forward.z);
+		//wPos = wPos - _RefPos;
+		//wPos.x = wPos.x/_Len;
+		//wPos.y = wPos.y/_Len;
+		//wPos.z = wPos.z/_Len;
+		//float dist = abs(wPos.x * _Forward.x + wPos.y * _Forward.y + wPos.z * _Forward.z);
 
-		dist = 1;//1-dist;
+		//dist = 1-dist;
 		float3 norm = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 
 		float2 offset = TransformViewToProjection(norm.xy);
 
-		o.pos.xy += dist* offset * o.pos.z * _Outline;
-		o.color = dist * _OutlineColor;
+		o.pos.xy +=  offset * o.pos.z * _Outline;
+		o.color = _Sin * _OutlineColor;
+		o.color.r = clamp(o.color.r,0.1,1.0);
+		o.color.g = clamp(o.color.g,0.1,1.0);
+		o.color.b = clamp(o.color.b,0.1,1.0);
 		o.color.a=1;
 		return o;
 	}

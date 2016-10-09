@@ -9,9 +9,29 @@ public class Line :MonoBehaviour{
 	// a function to add a single point.
 	List<LinePoint> myLine =  new List<LinePoint>();
 
-	public void AddPoint(LinePoint PointToAdd){ // Add a point to the line
-		Debug.Log(PointToAdd.creationTime);
-		myLine.Add (PointToAdd);
+
+    List<int> soundIndexes = new List<int>();
+    //Every time we add a sound, add it to soundIndexArray
+    //This way we know what's going on in terms of each sound point
+    //Then, every time that we update, check if we're at 1) next sound and 2) next tube play, using lastSound.startTime + n  * tubeTime
+    //I think each point is going to store a DeltaT
+
+	public void AddPoint(LinePoint PointToAdd, bool isSound){ // Add a point to the line
+
+		if (isSound)
+        {
+
+            //Get # of points added since last sound (INCLUDE last sound point!)
+			if (soundIndexes.Count > 0) {
+				int counter = myLine.Count - soundIndexes [soundIndexes.Count - 1];
+				for (int i = soundIndexes [soundIndexes.Count - 1]; i < myLine.Count; i++) {
+					myLine [i].deltaT = (PointToAdd.creationTime - myLine [soundIndexes [soundIndexes.Count - 1]].creationTime) / counter;
+				}
+			}
+            soundIndexes.Add(myLine.Count);
+        }
+            myLine.Add (PointToAdd);
+       
 
 	}
 
@@ -47,25 +67,34 @@ public class Line :MonoBehaviour{
 	public LinePoint OriginPoint; // OriginPoint aka first index of line. 
 	public bool LineDrawn= false;
 
+    private int soundIndex = 0;
 
 	void Update(){
 		if (endTime < startTime + 2) {
 			endTime = startTime + 2;
 		}
 		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
-			if (currentPoint < myLine.Count) {
-				if (currentTime > myLine [currentPoint].creationTime && myLine [currentPoint].sample != null) {
+			if (soundIndex < soundIndexes.Count) {	
+				if (currentTime > myLine [soundIndexes [soundIndex]].creationTime && myLine [soundIndexes [soundIndex]].sample != null) {
 					//"Play Point" 
 					// e.g myLine.[currentPoint].gameObject.GetComponent<AudioSource>().play....
-					myLine [currentPoint].sample.Stop ();
-					myLine [currentPoint].sample.Play ();
-					currentPoint += 1;
-				} 
-			}else if (currentTime > endTime - startTime) {
-				
-					currentPoint = 0; // reset current point to 0
-					currentTime = 0;
-			}
+					myLine [soundIndexes [soundIndex]].sample.Stop ();
+					myLine [soundIndexes [soundIndex]].sample.Play ();
+
+					soundIndex += 1;
+					
+					currentPoint = 0;
+				} else if (soundIndex>0 && soundIndexes.Count>1){
+					if (currentTime > myLine [soundIndexes [soundIndex - 1]].creationTime + currentPoint * myLine [soundIndexes [soundIndex - 1]].deltaT) {
+						currentPoint += 1;
+						myLine [soundIndexes [soundIndex - 1] + currentPoint].animating = true;
+					}
+				}
+			} else if (currentTime > endTime - startTime) {
+				currentTime = 0;
+				soundIndex = 0;	
+			}	
+	
             currentTime += Time.deltaTime;
 
         }

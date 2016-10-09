@@ -96,7 +96,7 @@ public class MouseBrush : MonoBehaviour
 
             CurrentPointPrefab.GetComponent<AudioSource>().clip = TestClip; // Remove GetComponent later on.
                                                                             //pt.sample = TestClip;
-            currentLine.GetComponent<Line>().AddPoint(pt);
+            currentLine.GetComponent<Line>().AddPoint(pt,true);
             pt.sample = pt.GetComponent<AudioSource>();
             pt.sample.Play();
             currentTime = 0;
