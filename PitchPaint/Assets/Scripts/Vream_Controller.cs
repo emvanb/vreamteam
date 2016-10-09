@@ -47,30 +47,57 @@ public class Vream_Controller : MonoBehaviour {
 		if (controller.GetPressUp (triggerButton)) {
 			triggerPress = false;
 		}
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>.3333)
-        {
-            dpadPressRight = true;
-			Debug.Log("pad right");
-        }
+		//Obsolete controlle
+//		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>.3333)
+//        {
+//            dpadPressRight = true;
+//			Debug.Log("pad right");
+//        }
+//
+//		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX<-.3333)
+//        {
+//			dpadPressLeft = true;
+//			Debug.Log("pad  left");
+//        }
+//			
+//		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 &&dpadCoordY>-0.2f )
+//		{
+//			dpadPressCenter = true;
+//			Debug.Log("pad  center");
+//		}
+//		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 &&dpadCoordY<=-0.2f )
+//		{
+//			dpadPressDown = true;
+//			Debug.Log("pad  down");
+//		}
 
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX<-.3333)
-        {
+
+		//New Controller
+
+		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordY<=dpadCoordX && dpadCoordY>=-dpadCoordX)
+		{
+			dpadPressRight = true;
+			Debug.Log("pad right");
+		}
+
+		else if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordY<=-dpadCoordX && dpadCoordY>=dpadCoordX)
+		{
 			dpadPressLeft = true;
 			Debug.Log("pad  left");
-        }
-			
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 &&dpadCoordY>-0.2f )
+		}
+
+		else if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordY>=dpadCoordX && dpadCoordY>=-dpadCoordX )
 		{
 			dpadPressCenter = true;
 			Debug.Log("pad  center");
 		}
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 &&dpadCoordY<=-0.2f )
+		else if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordY<=dpadCoordX && dpadCoordY<=-dpadCoordX)
 		{
 			dpadPressDown = true;
 			Debug.Log("pad  down");
-		}
     }
 
+}
 }
 
 
