@@ -23,6 +23,7 @@ public class GameLoop : MonoBehaviour {
 	private string[] sampleNames = new string[6];
 	public List<GameObject> SpawnedLines = new List<GameObject>();
 
+	public bool UseHarmoniousMixer;
 
 	public BaseBrush myBrush;
     // Use this for initialization
