@@ -55,6 +55,7 @@ public class BaseBrush : MonoBehaviour {
 		TestClip = liveGameLoop.currentSample;
 
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
+		liveGameLoop.SpawnedLines.Add (CurrentDrawingLineParent);
 		CurrentDrawingLineParent.transform.position = handPos;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
 		lastPoint = handPos;
