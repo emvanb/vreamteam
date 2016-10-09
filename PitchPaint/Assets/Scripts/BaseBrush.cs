@@ -130,12 +130,16 @@ public class BaseBrush : MonoBehaviour {
 		Debug.Log("HandPos is: " + position);
 		HeightofSpawnedY = (int)Mathf.Round((position.y-0.5f)*10); // 
 		Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
-		if(!liveGameLoop.UseHarmoniousMixer)
+		if (!liveGameLoop.UseHarmoniousMixer)
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
-		else
+		else {
+			if (HeightofSpawnedY > 12) {
+				HeightofSpawnedY = 12;
+			}
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = HarmoniousGroupArray [HeightofSpawnedY];
 		
 
+		}
 		pt.SetHeightColor (HeightofSpawnedY);
 
 		//setting up the audiosource volume
