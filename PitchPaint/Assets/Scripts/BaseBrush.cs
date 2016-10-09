@@ -102,6 +102,8 @@ public class BaseBrush : MonoBehaviour {
 		}
 		if (Vector3.Distance(handPos, lastPoint) > .1f)
 		{
+			HeightofSpawnedY = (int)Mathf.Round((currentCylinder.transform.position.y-0.5f)*10);
+			currentCylinder.GetComponent<LinePoint> ().SetHeightColor (HeightofSpawnedY);
 			currentCylinder = (GameObject)Instantiate(EmptyPointPrefab);
 			MoveCurrentCylinder(lastPos, handPos);
 			lastPoint = handPos;
@@ -133,6 +135,7 @@ public class BaseBrush : MonoBehaviour {
 		Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
 		pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
 
+		pt.SetHeightColor (HeightofSpawnedY);
 
 		//setting up the audiosource volume
 		//pt.GetComponent<AudioSource>().volume = pt.pointVelocity;
