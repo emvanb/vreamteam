@@ -102,19 +102,19 @@ public class GameLoop : MonoBehaviour {
 		}
 
 		//increment effects
-        if (leftController.dpadPressRight)
-        {
-            console.text = "leftcontroller right";
-			effecttxt.text = "Effect_" + (soundName + 1).ToString();
-        }
+        //if (leftController.dpadPressRight)
+        //{
+          //  console.text = "leftcontroller right";
+		//	effecttxt.text = "Effect_" + (soundName + 1).ToString();
+      //  }
 
 		//decrement effects
-        if (leftController.dpadPressLeft)
-        {
-            console.text = "leftcontrollerleft";
-			effecttxt.text = "Effect_" + (soundName - 1).ToString();
-        }
-		if (leftController.dpadPressDown) {
+    //    if (leftController.dpadPressLeft)
+        //{
+      //      console.text = "leftcontrollerleft";
+	//		effecttxt.text = "Effect_" + (soundName - 1).ToString();
+//        }
+		if (leftController.dpadPressDown || leftController.dpadPressLeft || leftController.dpadPressRight) {
 			DeleteLastLine ();
 		}
     }
