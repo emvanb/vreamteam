@@ -82,7 +82,7 @@ public class MouseBrush : MonoBehaviour
             LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint>();
             CurrentPointPrefab.transform.position = (handPos + lastPoint) / 2.0f;
             CurrentPointPrefab.transform.LookAt(handPos);
-            CurrentPointPrefab.transform.localScale = new Vector3(.05f, .05f, (handPos - lastPoint).magnitude * .6f);
+            CurrentPointPrefab.transform.localScale = new Vector3(.05f, .05f, Mathf.Max((handPos - lastPoint).magnitude * .6f,.005f)) ;
             //LinePoint pt = new LinePoint ();
             pt.creationTime = Time.time - currentLine.GetComponent<Line>().startTime;
             pt.pointLocation = handPos;

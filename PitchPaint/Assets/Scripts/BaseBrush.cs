@@ -50,15 +50,14 @@ public class BaseBrush : MonoBehaviour {
 //		}
 //			
 //	}
-	public void StartDraw()
+	public void StartDraw(Vector3 handPos)
 	{
 		TestClip = liveGameLoop.currentSample;
 
 		CurrentDrawingLineParent = (GameObject)Instantiate (DrawingLineParentPrefab);
-		CurrentDrawingLineParent.transform.position = Input.mousePosition;
+		CurrentDrawingLineParent.transform.position = handPos;
 		CurrentDrawingLineParent.GetComponent<Line> ().startTime = Time.time;
-        lastPoint =  new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5.0f);
-        lastPoint = Camera.main.ScreenToWorldPoint(lastPoint);
+        lastPoint = handPos;
         currentCylinder =  (GameObject)Instantiate(EmptyPointPrefab);
         MoveCurrentCylinder(lastPoint, lastPoint + Vector3.one * .05f);
     }
