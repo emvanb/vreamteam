@@ -48,6 +48,9 @@ public class Line :MonoBehaviour{
 
 
 	void Update(){
+		if (endTime < startTime + 4) {
+			endTime = startTime + 4;
+		}
 		if ((myLine.Count > 0)&& LineDrawn==true) {// Check if line has any points first. 
 			if (currentTime > myLine [currentPoint].creationTime) {
                 //"Play Point" 

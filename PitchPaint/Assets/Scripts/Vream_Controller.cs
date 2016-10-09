@@ -30,7 +30,8 @@ public class Vream_Controller : MonoBehaviour {
         dpadPressUp = false;
         dpadPressDown = false;
         dpadPressLeft = false;
-        dpadPressRight = false;
+		dpadPressRight = false;
+		dpadPressCenter = false;
         dpadCoordX = controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).x;
         dpadCoordY = controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).y;
 

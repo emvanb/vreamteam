@@ -1,12 +1,14 @@
-﻿<Properties StartupItem="PitchPaint.CSharp.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameLoop.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameLoop.cs" Line="80" Column="4" />
-      <File FileName="Assets\Scripts\Vream_Controller.cs" Line="9" Column="29" />
-      <File FileName="Assets\Scripts\BaseBrush.cs" Line="76" Column="41" />
-      <File FileName="Assets\Scripts\Line.cs" Line="47" Column="31" />
-      <File FileName="Assets\Scripts\MouseGameLoop.cs" Line="19" Column="6" />
+      <File FileName="Assets\Scripts\GameLoop.cs" Line="45" Column="51" />
+      <File FileName="Assets\Scripts\Vream_Controller.cs" Line="47" Column="24" />
+      <File FileName="Assets\Scripts\BaseBrush.cs" Line="49" Column="61" />
+      <File FileName="Assets\Scripts\Line.cs" Line="52" Column="28" />
+      <File FileName="Assets\Scripts\MouseGameLoop.cs" Line="26" Column="23" />
+      <File FileName="Assets\Scripts\MouseBrush.cs" Line="77" Column="1" />
+      <File FileName="Assets\Scripts\LinePoint.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

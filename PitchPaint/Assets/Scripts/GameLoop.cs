@@ -16,6 +16,8 @@ public class GameLoop : MonoBehaviour {
 
 	public AudioClip[] samples = new AudioClip[6];
 	public AudioClip currentSample;
+
+	private GameObject CurrentPointPrefab;
 	private int indexSample = 0;
 	private string[] sampleNames = new string[6];
 
@@ -40,10 +42,13 @@ public class GameLoop : MonoBehaviour {
         console.text ="heyyy!!";
 		if (rightController.triggerPress) {
 			console.text = "yo yo trigger pressed on right";
-			if (myBrush.CurrentDrawingLineParent == null || 
-				myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn == true) {
-				myBrush.StartDraw (rightC.transform.position);
-			}
+			if (myBrush.CurrentDrawingLineParent == null || myBrush.CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn == true) {
+				myBrush.StartDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
+			} 
+			/*else if (myBrush.CurrentDrawingLineParent.GetComponent<Line> ().LineDrawn == true) {
+				Debug.Log ("linedrawn");
+				myBrush.StartDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
+			}*/
 			myBrush.UpdateDraw (rightC.transform.position, myBrush.CurrentDrawingLineParent);
 
 		} else if(myBrush.CurrentDrawingLineParent!=null) {
@@ -77,6 +82,15 @@ public class GameLoop : MonoBehaviour {
 		if (rightController.dpadPressCenter)
 		{
 			console.text = "right controllerleft";
+			if (CurrentPointPrefab != null) {
+				Destroy (CurrentPointPrefab);
+			}
+		    CurrentPointPrefab = myBrush.ProducePoint (rightC.transform.position);
+			CurrentPointPrefab.GetComponentInChildren<MeshRenderer> ().enabled = false;
+			LinePoint pt = CurrentPointPrefab.GetComponent<LinePoint> ();
+			//pt.sample = TestClip;
+			pt.sample = pt.GetComponent<AudioSource> ();
+			pt.sample.Play ();
 
 		}
 
