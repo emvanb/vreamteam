@@ -47,7 +47,7 @@ public class LinePoint: MonoBehaviour {
 			}
 			tempRenderer.materials [0].SetVector ("_RefPos", new Vector4 (currentPoint.x, currentPoint.y, currentPoint.z, 0));
 		} else {
-			tempRenderer.materials [0].SetVector ("_RefPos", new Vector4 (1000,1000,1000, 0));
+			tempRenderer.materials [0].SetVector ("_RefPos", new Vector4 (1000,1000,1000,0));
 		}
 	}
 	public Vector3 convertToRGB(float height)
