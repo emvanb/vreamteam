@@ -93,6 +93,10 @@ public class BaseBrush : MonoBehaviour {
 			Debug.Assert(HeightofSpawnedY>=0 && HeightofSpawnedY<20);
 			pt.GetComponent<AudioSource> ().outputAudioMixerGroup = AudioMixerGroupArray [HeightofSpawnedY];
 
+
+			//setting up the audiosource volume
+			pt.GetComponent<AudioSource>().volume = pt.pointVelocity;
+
 			CurrentPointPrefab.GetComponent<AudioSource> ().clip = TestClip; // Remove GetComponent later on.
 			//pt.sample = TestClip;
 			currentLine.GetComponent<Line>().AddPoint(pt);
