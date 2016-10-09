@@ -59,10 +59,15 @@ public class Vream_Controller : MonoBehaviour {
 			Debug.Log("pad  left");
         }
 			
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 )
+		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 &&dpadCoordY>-0.2f )
 		{
 			dpadPressCenter = true;
 			Debug.Log("pad  center");
+		}
+		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 &&dpadCoordY<=-0.2f )
+		{
+			dpadPressDown = true;
+			Debug.Log("pad  down");
 		}
     }
 

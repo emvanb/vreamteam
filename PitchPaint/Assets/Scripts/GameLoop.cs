@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameLoop : MonoBehaviour {
     public GameObject effectTextObj;
@@ -20,6 +21,8 @@ public class GameLoop : MonoBehaviour {
 	private GameObject CurrentPointPrefab;
 	private int indexSample = 0;
 	private string[] sampleNames = new string[6];
+	public List<GameObject> SpawnedLines = new List<GameObject>();
+
 
 	public BaseBrush myBrush;
     // Use this for initialization
@@ -107,5 +110,13 @@ public class GameLoop : MonoBehaviour {
             console.text = "leftcontrollerleft";
 			effecttxt.text = "Effect_" + (soundName - 1).ToString();
         }
+		if (leftController.dpadPressDown) {
+			DeleteLastLine ();
+		}
     }
+
+	public void DeleteLastLine(){
+		Destroy (SpawnedLines [SpawnedLines.Count - 1]);
+
+	}
 }
