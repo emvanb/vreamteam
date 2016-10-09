@@ -23,7 +23,7 @@ public class MouseGameLoop : MonoBehaviour
             if (myBrush.CurrentDrawingLineParent == null ||
                 myBrush.CurrentDrawingLineParent.GetComponent<Line>().LineDrawn == true)
             {
-				myBrush.StartDraw(Camera.main.ScreenToWorldPoint(pos));
+				myBrush.StartDraw();
             }
             myBrush.UpdateDraw(Camera.main.ScreenToWorldPoint(pos), myBrush.CurrentDrawingLineParent);
 

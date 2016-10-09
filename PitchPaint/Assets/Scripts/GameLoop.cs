@@ -25,7 +25,7 @@ public class GameLoop : MonoBehaviour {
 		currentSample = samples [indexSample];
 		leftController= leftC.GetComponent<Vream_Controller>();
 		rightController= rightC.GetComponent<Vream_Controller>();
-        console = GameObject.Find("Console").GetComponent<TextMesh>();
+        //console = GameObject.Find("Console").GetComponent<TextMesh>();
     }
 
     // Update is called once per frame
@@ -73,6 +73,12 @@ public class GameLoop : MonoBehaviour {
 			currentSample = samples[indexSample];
 			soundtxt.text = currentSample.name;
         }
+
+		if (rightController.dpadPressCenter)
+		{
+			console.text = "right controllerleft";
+
+		}
 
 		//increment effects
         if (leftController.dpadPressRight)

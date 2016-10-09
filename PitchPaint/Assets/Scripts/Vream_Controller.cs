@@ -6,6 +6,7 @@ public class Vream_Controller : MonoBehaviour {
     public bool triggerPress = false;
     public bool dpadPressUp = false;
     public bool dpadPressDown = false;
+	public bool dpadPressCenter = false;
     public bool dpadPressLeft = false;
     public bool dpadPressRight = false;
     //coordinates are a float from 0-1. Where origin is center  of the touch pad and  top right corner  is 1,1
@@ -45,18 +46,23 @@ public class Vream_Controller : MonoBehaviour {
 		if (controller.GetPressUp (triggerButton)) {
 			triggerPress = false;
 		}
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>.5)
+		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>.3333)
         {
             dpadPressRight = true;
 			Debug.Log("pad right");
         }
 
-		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX<-.5)
+		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX<-.3333)
         {
 			dpadPressLeft = true;
 			Debug.Log("pad  left");
         }
 			
+		if (controller.GetPressDown(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad) && dpadCoordX>=-.3333 && dpadCoordX<=.3333 )
+		{
+			dpadPressCenter = true;
+			Debug.Log("pad  center");
+		}
     }
 
 }
