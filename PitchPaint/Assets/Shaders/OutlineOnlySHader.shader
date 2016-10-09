@@ -43,7 +43,7 @@ Shader "Outlined/Silhouetted Diffuse" {
 		wPos.z = wPos.z/_Len;
 		float dist = abs(wPos.x * _Forward.x + wPos.y * _Forward.y + wPos.z * _Forward.z);
 
-		dist = 1-dist;
+		dist = 1;//1-dist;
 		float3 norm = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 
 		float2 offset = TransformViewToProjection(norm.xy);

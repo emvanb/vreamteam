@@ -19,7 +19,6 @@ public class LinePoint: MonoBehaviour {
 		//If we have a MeshRenderer on our object
 
 		if (tempRenderer != null)
-
 		{
 			Debug.Log ("swap materials");
 			Material quickSwapMaterial = Instantiate((tempRenderer as Renderer).materials[0]) as Material;
